@@ -12,6 +12,7 @@
 		32EFC03D220C72C8003F175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03B220C72C8003F175B /* Main.storyboard */; };
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
+		B5DDE8CB22119FB800079AEF /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = B5DDE8CA22119FB800079AEF /* square.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		32EFC03E220C72CB003F175B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32EFC041220C72CB003F175B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5DDE8CA22119FB800079AEF /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square.png; path = ../../../Downloads/QRReader/QRReader/square.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				32EFC039220C72C8003F175B /* ViewController.swift */,
 				32EFC03B220C72C8003F175B /* Main.storyboard */,
 				32EFC03E220C72CB003F175B /* Assets.xcassets */,
+				B5DDE8CA22119FB800079AEF /* square.png */,
 				32EFC040220C72CB003F175B /* LaunchScreen.storyboard */,
 				32EFC043220C72CB003F175B /* Info.plist */,
 			);
@@ -124,6 +127,7 @@
 			files = (
 				32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */,
 				32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */,
+				B5DDE8CB22119FB800079AEF /* square.png in Resources */,
 				32EFC03D220C72C8003F175B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
