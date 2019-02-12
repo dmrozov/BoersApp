@@ -12,19 +12,13 @@ import AVFoundation
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     
-    @IBOutlet weak var square: UIImageView!
+    @IBOutlet var squareImageView: UIImageView!
     var video = AVCaptureVideoPreviewLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //Creating session
         let session = AVCaptureSession()
-        
-        //Define capture devcie
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
-        
+        let captureDevice = AVCaptureDevice.default(for: .video)
         do
         {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
@@ -34,23 +28,19 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         {
             print ("ERROR")
         }
-        
         let output = AVCaptureMetadataOutput()
         session.addOutput(output)
-        
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        
         output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-        
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
-        
-        self.view.bringSubview(toFront: square)
-        
+        self.view.bringSubviewToFront(squareImageView)
         session.startRunning()
     }
-    
+}
+
+extension ViewController {
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
         if metadataObjects != nil && metadataObjects.count != 0
@@ -70,6 +60,5 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
         }
     }
-
 }
 
