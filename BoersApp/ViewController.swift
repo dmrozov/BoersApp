@@ -10,8 +10,7 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    
-    
+
     @IBOutlet var squareImageView: UIImageView!
     var video = AVCaptureVideoPreviewLayer()
     
@@ -19,13 +18,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         super.viewDidLoad()
         let session = AVCaptureSession()
         let captureDevice = AVCaptureDevice.default(for: .video)
-        do
-        {
+        do {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
             session.addInput(input)
         }
-        catch
-        {
+        catch {
             print ("ERROR")
         }
         let output = AVCaptureMetadataOutput()
@@ -38,17 +35,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         self.view.bringSubviewToFront(squareImageView)
         session.startRunning()
     }
+    
 }
 
 extension ViewController {
+    
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
-        if metadataObjects != nil && metadataObjects.count != 0
-        {
-            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
-            {
-                if object.type == AVMetadataObject.ObjectType.qr
-                {
+        if metadataObjects != nil && metadataObjects.count != 0 {
+            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
+                if object.type == AVMetadataObject.ObjectType.qr {
                     let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
@@ -60,5 +55,6 @@ extension ViewController {
             }
         }
     }
+    
 }
 
