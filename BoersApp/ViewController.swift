@@ -10,10 +10,7 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
-    @IBOutlet var squareImageView: UIImageView!
     var video = AVCaptureVideoPreviewLayer()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let session = AVCaptureSession()
@@ -32,15 +29,14 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
-        self.view.bringSubviewToFront(squareImageView)
         session.startRunning()
     }
-    
 }
 
 extension ViewController {
-    
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!,
+                       didOutputMetadataObjects metadataObjects: [Any]!,
+                       from connection: AVCaptureConnection!) {
         if metadataObjects != nil && metadataObjects.count != 0 {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
                 if object.type == AVMetadataObject.ObjectType.qr {
@@ -49,7 +45,6 @@ extension ViewController {
                     alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
                         UIPasteboard.general.string = object.stringValue
                     }))
-                    
                     present(alert, animated: true, completion: nil)
                 }
             }
