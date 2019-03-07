@@ -9,10 +9,16 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScannerViewController: UIViewController {
     var video = AVCaptureVideoPreviewLayer()
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureScanner()
+    }
+}
+
+extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+    private func configureScanner() {
         let session = AVCaptureSession()
         let captureDevice = AVCaptureDevice.default(for: .video)
         do {
@@ -24,22 +30,19 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
         let output = AVCaptureMetadataOutput()
         session.addOutput(output)
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+        output.setMetadataObjectsDelegate(self, queue: .main)
+        output.metadataObjectTypes = [.qr]
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
         session.startRunning()
     }
-}
-
-extension ViewController {
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didOutputMetadataObjects metadataObjects: [Any]!,
                        from connection: AVCaptureConnection!) {
         if metadataObjects != nil && metadataObjects.count != 0 {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
-                if object.type == AVMetadataObject.ObjectType.qr {
+                if object.type == .qr {
                     let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
