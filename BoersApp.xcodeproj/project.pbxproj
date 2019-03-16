@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32E9163C223CE3DA00C22561 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E9163B223CE3DA00C22561 /* Product.swift */; };
 		32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFC037220C72C8003F175B /* AppDelegate.swift */; };
 		32EFC03A220C72C8003F175B /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFC039220C72C8003F175B /* ScannerViewController.swift */; };
 		32EFC03D220C72C8003F175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03B220C72C8003F175B /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32E9163B223CE3DA00C22561 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		32EFC034220C72C8003F175B /* BoersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32EFC037220C72C8003F175B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32EFC039220C72C8003F175B /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		32E91639223CE1E700C22561 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				32E9163B223CE3DA00C22561 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				32EFC03A220C72C8003F175B /* ScannerViewController.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
+				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
