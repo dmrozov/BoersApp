@@ -12,6 +12,7 @@
 		32EFC03D220C72C8003F175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03B220C72C8003F175B /* Main.storyboard */; };
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
+		9F69AB4FD1AD84CC58D4AEC5 /* Pods_BoersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392A48899B1DBA3E9FEBE8DF /* Pods_BoersApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		32EFC03E220C72CB003F175B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32EFC041220C72CB003F175B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		392A48899B1DBA3E9FEBE8DF /* Pods_BoersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6471F04C6C9EAA12F70CDB26 /* Pods-BoersApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.debug.xcconfig"; path = "Target Support Files/Pods-BoersApp/Pods-BoersApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EA5E4B602137377A7109D98D /* Pods-BoersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.release.xcconfig"; path = "Target Support Files/Pods-BoersApp/Pods-BoersApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F69AB4FD1AD84CC58D4AEC5 /* Pods_BoersApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32E91638223CE0BC00C22561 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32EFC03B220C72C8003F175B /* Main.storyboard */,
+				32EFC040220C72CB003F175B /* LaunchScreen.storyboard */,
+				32EFC03E220C72CB003F175B /* Assets.xcassets */,
+				32EFC043220C72CB003F175B /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		32E91639223CE1E700C22561 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32E9163A223CE1FF00C22561 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				32EFC039220C72C8003F175B /* ScannerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		32EFC02B220C72C8003F175B = {
 			isa = PBXGroup;
 			children = (
 				32EFC036220C72C8003F175B /* BoersApp */,
 				32EFC035220C72C8003F175B /* Products */,
+				A5B59727077F0B23F15DEB4A /* Pods */,
+				9E2237A4941895F6051DA995 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +88,28 @@
 			isa = PBXGroup;
 			children = (
 				32EFC037220C72C8003F175B /* AppDelegate.swift */,
-				32EFC039220C72C8003F175B /* ScannerViewController.swift */,
-				32EFC03B220C72C8003F175B /* Main.storyboard */,
-				32EFC03E220C72CB003F175B /* Assets.xcassets */,
-				32EFC040220C72CB003F175B /* LaunchScreen.storyboard */,
-				32EFC043220C72CB003F175B /* Info.plist */,
+				32E9163A223CE1FF00C22561 /* ViewControllers */,
+				32E91639223CE1E700C22561 /* Models */,
+				32E91638223CE0BC00C22561 /* Resources */,
 			);
 			path = BoersApp;
+			sourceTree = "<group>";
+		};
+		9E2237A4941895F6051DA995 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				392A48899B1DBA3E9FEBE8DF /* Pods_BoersApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5B59727077F0B23F15DEB4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6471F04C6C9EAA12F70CDB26 /* Pods-BoersApp.debug.xcconfig */,
+				EA5E4B602137377A7109D98D /* Pods-BoersApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +119,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32EFC046220C72CB003F175B /* Build configuration list for PBXNativeTarget "BoersApp" */;
 			buildPhases = (
+				6A2572C9E7BA2DCD29E508B0 /* [CP] Check Pods Manifest.lock */,
 				32EFC030220C72C8003F175B /* Sources */,
 				32EFC031220C72C8003F175B /* Frameworks */,
 				32EFC032220C72C8003F175B /* Resources */,
@@ -129,6 +178,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A2572C9E7BA2DCD29E508B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoersApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32EFC030220C72C8003F175B /* Sources */ = {
@@ -280,6 +354,7 @@
 		};
 		32EFC047220C72CB003F175B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6471F04C6C9EAA12F70CDB26 /* Pods-BoersApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +373,7 @@
 		};
 		32EFC048220C72CB003F175B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA5E4B602137377A7109D98D /* Pods-BoersApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
