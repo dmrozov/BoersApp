@@ -14,7 +14,5 @@ struct Product {
     //swiftlint:enable identifier_name
     let name: String
     let code: String
-    //swiftlint:disable todo
-    //TODO: - Add collection of steps
-    //swiftlint:enable todo
+    let steps: [Step]
 }
