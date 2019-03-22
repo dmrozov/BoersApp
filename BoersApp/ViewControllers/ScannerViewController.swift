@@ -18,7 +18,7 @@ class ScannerViewController: UIViewController {
         configureScanner()
     }
 
-    //MARK: - Private funcs
+    // MARK: - Private funcs
 
     private func configureScanner() {
         let session = AVCaptureSession()
@@ -42,7 +42,7 @@ class ScannerViewController: UIViewController {
     }
 }
 
-//MARK: - AVCaptureMetadataOutputObjectsDelegate
+// MARK: - AVCaptureMetadataOutputObjectsDelegate
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 
@@ -54,7 +54,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 if object.type == .qr {
                     let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
+                    alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { _ in
                         UIPasteboard.general.string = object.stringValue
                     }))
                     present(alert, animated: true, completion: nil)
