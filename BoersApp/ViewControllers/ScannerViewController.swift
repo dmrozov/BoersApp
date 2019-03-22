@@ -10,33 +10,42 @@ import UIKit
 import AVFoundation
 
 class ScannerViewController: UIViewController {
-    var video = AVCaptureVideoPreviewLayer()
+
+    private var video = AVCaptureVideoPreviewLayer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureScanner()
     }
-}
 
-extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+    //MARK: - Private funcs
+
     private func configureScanner() {
         let session = AVCaptureSession()
         let captureDevice = AVCaptureDevice.default(for: .video)
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
             session.addInput(input)
-        }
-        catch {
+        } catch {
             print ("ERROR")
         }
+
         let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
         output.setMetadataObjectsDelegate(self, queue: .main)
         output.metadataObjectTypes = [.qr]
+        session.addOutput(output)
+
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
         session.startRunning()
     }
+}
+
+//MARK: - AVCaptureMetadataOutputObjectsDelegate
+
+extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didOutputMetadataObjects metadataObjects: [Any]!,
                        from connection: AVCaptureConnection!) {
@@ -53,6 +62,4 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             }
         }
     }
-    
 }
-
