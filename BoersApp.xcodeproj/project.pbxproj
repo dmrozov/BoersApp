@@ -13,6 +13,7 @@
 		32EFC03D220C72C8003F175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03B220C72C8003F175B /* Main.storyboard */; };
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
+		B5AD16F62244FB5300B59498 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD16F52244FB5300B59498 /* Step.swift */; };
 		D56A1DCEC59F59F608E73CB7 /* Pods_BoersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DED03762260821AA8E982 /* Pods_BoersApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383C632CF69DD4242D240E76 /* Pods-BoersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.release.xcconfig"; sourceTree = "<group>"; };
 		B54DED03762260821AA8E982 /* Pods_BoersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		EC09C0BA55C6549921B268E4 /* Pods-BoersApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				32E9163B223CE3DA00C22561 /* Product.swift */,
+				B5AD16F52244FB5300B59498 /* Step.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32EFC03A220C72C8003F175B /* ScannerViewController.swift in Sources */,
+				B5AD16F62244FB5300B59498 /* Step.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
 				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
 			);
