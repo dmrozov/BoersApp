@@ -7,4 +7,5 @@ target 'BoersApp' do
 
   # Pods for BoersApp
    pod 'SwiftLint'
+   pod 'Pulley'
 end

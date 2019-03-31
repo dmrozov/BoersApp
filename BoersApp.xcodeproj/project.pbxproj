@@ -125,11 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32EFC046220C72CB003F175B /* Build configuration list for PBXNativeTarget "BoersApp" */;
 			buildPhases = (
-				B5AD16F22244EAA000B59498 /* Run Script */,
 				2D56EB2023838EDCC628FBC8 /* [CP] Check Pods Manifest.lock */,
+				B5AD16F22244EAA000B59498 /* Run Script */,
 				32EFC030220C72C8003F175B /* Sources */,
 				32EFC031220C72C8003F175B /* Frameworks */,
 				32EFC032220C72C8003F175B /* Resources */,
+				DCCD59970EFAA5C2EF0472F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +227,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		DCCD59970EFAA5C2EF0472F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
