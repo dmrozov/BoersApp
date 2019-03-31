@@ -8,4 +8,6 @@ target 'BoersApp' do
   # Pods for BoersApp
    pod 'SwiftLint'
    pod 'Pulley'
+   pod 'Alamofire', '~> 4.7'
+   pod 'AlamofireObjectMapper'
 end
