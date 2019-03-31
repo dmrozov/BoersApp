@@ -10,6 +10,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="v27-aj-X85">
+            <objects>
+                <viewController id="mGJ-gG-ghu" customClass="AuthViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VaO-Ox-RtO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-Id-JUs">
+                                <rect key="frame" x="159" y="318" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="openWiFiSettings:" destination="mGJ-gG-ghu" eventType="touchUpInside" id="qtx-lO-Hlv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LdK-nb-xqy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iux-mI-aw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="-691"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,6 +48,81 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Pulley View Controller-->
+        <scene sceneID="nUi-sh-nkv">
+            <objects>
+                <viewController id="3aS-YR-oFc" customClass="PulleyViewController" customModule="Pulley" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h0W-hR-edi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPD-Tc-dQI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="341"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="341" id="qVK-Tx-wKL"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="RCT-G6-FCg" kind="embed" identifier="" id="trj-DB-qb6"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1A-gv-4P2">
+                                <rect key="frame" x="0.0" y="340" width="375" height="327"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="327" id="eFU-te-TJt"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Aw4-m1-GHf" kind="embed" id="rVu-r9-skh"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e1A-gv-4P2" firstAttribute="leading" secondItem="0U8-7b-DSo" secondAttribute="leading" id="4fq-t0-VjI"/>
+                            <constraint firstItem="tPD-Tc-dQI" firstAttribute="leading" secondItem="0U8-7b-DSo" secondAttribute="leading" id="7Tg-cZ-ekO"/>
+                            <constraint firstItem="tPD-Tc-dQI" firstAttribute="top" secondItem="h0W-hR-edi" secondAttribute="top" id="8er-mm-gFj"/>
+                            <constraint firstItem="tPD-Tc-dQI" firstAttribute="trailing" secondItem="0U8-7b-DSo" secondAttribute="trailing" id="B5K-q8-8yy"/>
+                            <constraint firstItem="e1A-gv-4P2" firstAttribute="trailing" secondItem="0U8-7b-DSo" secondAttribute="trailing" id="OcR-B9-bP9"/>
+                            <constraint firstItem="e1A-gv-4P2" firstAttribute="bottom" secondItem="0U8-7b-DSo" secondAttribute="bottom" id="XVO-vD-kPS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0U8-7b-DSo"/>
+                    </view>
+                    <connections>
+                        <outlet property="drawerContentContainerView" destination="e1A-gv-4P2" id="WSs-sj-gXT"/>
+                        <outlet property="primaryContentContainerView" destination="tPD-Tc-dQI" id="N6s-2w-L8V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GFM-ew-SZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="837.93103448275872"/>
+        </scene>
+        <!--Primary Content View Controller-->
+        <scene sceneID="qlw-iP-YgA">
+            <objects>
+                <viewController id="RCT-G6-FCg" customClass="PrimaryContentViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lYw-53-2Tg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="341"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8a-nU-DeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="674"/>
+        </scene>
+        <!--Drawer Content View Controller-->
+        <scene sceneID="rXz-we-hGA">
+            <objects>
+                <viewController id="Aw4-m1-GHf" customClass="DrawerContentViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vff-tm-gqU" customClass="D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVi-sw-UJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="1093"/>
         </scene>
     </scenes>
 </document>
