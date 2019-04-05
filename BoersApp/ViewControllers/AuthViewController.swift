@@ -12,10 +12,8 @@ class AuthViewController: UIViewController {
 
     @IBAction func openWiFiSettings(_ sender: Any) {
             print("Opening Wi-Fi settings.")
-            
             let shared = UIApplication.shared
             let url = URL(string: UIApplication.openSettingsURLString)!
-            
             if #available(iOS 10.0, *) {
                 shared.open(url)
             } else {

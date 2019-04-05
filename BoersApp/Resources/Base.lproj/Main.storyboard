@@ -19,12 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-Id-JUs">
-                                <rect key="frame" x="159" y="318" width="57" height="30"/>
+                                <rect key="frame" x="159" y="283" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <action selector="openWiFiSettings:" destination="mGJ-gG-ghu" eventType="touchUpInside" id="qtx-lO-Hlv"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPD-Lr-WmF">
+                                <rect key="frame" x="168" y="321" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,96 +38,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iux-mI-aw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="-691"/>
+            <point key="canvasLocation" x="-145" y="27"/>
         </scene>
-        <!--View Controller-->
+        <!--Pulley View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PulleyViewController" customModule="Pulley" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--Pulley View Controller-->
-        <scene sceneID="nUi-sh-nkv">
-            <objects>
-                <viewController id="3aS-YR-oFc" customClass="PulleyViewController" customModule="Pulley" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h0W-hR-edi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPD-Tc-dQI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="341"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="341" id="qVK-Tx-wKL"/>
-                                </constraints>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aqn-mE-LlL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <connections>
-                                    <segue destination="RCT-G6-FCg" kind="embed" identifier="" id="trj-DB-qb6"/>
+                                    <segue destination="6w6-3O-gfX" kind="embed" identifier="" id="gob-8U-abO"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1A-gv-4P2">
-                                <rect key="frame" x="0.0" y="340" width="375" height="327"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="327" id="eFU-te-TJt"/>
-                                </constraints>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugp-yx-F1k">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                                 <connections>
-                                    <segue destination="Aw4-m1-GHf" kind="embed" id="rVu-r9-skh"/>
+                                    <segue destination="k6p-xh-Flv" kind="embed" identifier="" id="yv6-2M-xkQ"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="e1A-gv-4P2" firstAttribute="leading" secondItem="0U8-7b-DSo" secondAttribute="leading" id="4fq-t0-VjI"/>
-                            <constraint firstItem="tPD-Tc-dQI" firstAttribute="leading" secondItem="0U8-7b-DSo" secondAttribute="leading" id="7Tg-cZ-ekO"/>
-                            <constraint firstItem="tPD-Tc-dQI" firstAttribute="top" secondItem="h0W-hR-edi" secondAttribute="top" id="8er-mm-gFj"/>
-                            <constraint firstItem="tPD-Tc-dQI" firstAttribute="trailing" secondItem="0U8-7b-DSo" secondAttribute="trailing" id="B5K-q8-8yy"/>
-                            <constraint firstItem="e1A-gv-4P2" firstAttribute="trailing" secondItem="0U8-7b-DSo" secondAttribute="trailing" id="OcR-B9-bP9"/>
-                            <constraint firstItem="e1A-gv-4P2" firstAttribute="bottom" secondItem="0U8-7b-DSo" secondAttribute="bottom" id="XVO-vD-kPS"/>
+                            <constraint firstItem="Ugp-yx-F1k" firstAttribute="top" secondItem="Aqn-mE-LlL" secondAttribute="bottom" id="962-GU-Lbf"/>
+                            <constraint firstItem="Aqn-mE-LlL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cvo-iA-lWH"/>
+                            <constraint firstItem="Ugp-yx-F1k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EG6-yH-1fX"/>
+                            <constraint firstItem="Ugp-yx-F1k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gqz-X1-dNj"/>
+                            <constraint firstItem="Ugp-yx-F1k" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TDX-w4-cHA"/>
+                            <constraint firstItem="Aqn-mE-LlL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VBG-AP-jeg"/>
+                            <constraint firstItem="Aqn-mE-LlL" firstAttribute="height" secondItem="Ugp-yx-F1k" secondAttribute="height" id="Wge-CY-rco"/>
+                            <constraint firstItem="Aqn-mE-LlL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ssg-zS-ibS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0U8-7b-DSo"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="drawerContentContainerView" destination="e1A-gv-4P2" id="WSs-sj-gXT"/>
-                        <outlet property="primaryContentContainerView" destination="tPD-Tc-dQI" id="N6s-2w-L8V"/>
+                        <outlet property="drawerContentContainerView" destination="Ugp-yx-F1k" id="Xc7-Uq-WWS"/>
+                        <outlet property="primaryContentContainerView" destination="Aqn-mE-LlL" id="C9B-5X-fIB"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GFM-ew-SZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="837.93103448275872"/>
+            <point key="canvasLocation" x="669.60000000000002" y="26.53673163418291"/>
         </scene>
         <!--Primary Content View Controller-->
-        <scene sceneID="qlw-iP-YgA">
+        <scene sceneID="FJH-gw-rbN">
             <objects>
-                <viewController id="RCT-G6-FCg" customClass="PrimaryContentViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lYw-53-2Tg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="341"/>
+                <viewController id="6w6-3O-gfX" customClass="PrimaryContentViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hz-Zp-Qw4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.16788150090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d8a-nU-DeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGo-hq-Ohv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="674"/>
+            <point key="canvasLocation" x="1457" y="-133"/>
         </scene>
         <!--Drawer Content View Controller-->
-        <scene sceneID="rXz-we-hGA">
+        <scene sceneID="2Ub-3L-Okt">
             <objects>
-                <viewController id="Aw4-m1-GHf" customClass="DrawerContentViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vff-tm-gqU" customClass="D">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                <viewController id="k6p-xh-Flv" customClass="DrawerContentViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbV-wk-AkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Wpg-mh-PoB"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iVi-sw-UJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgj-eh-dlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="1093"/>
+            <point key="canvasLocation" x="1457" y="236"/>
         </scene>
     </scenes>
 </document>
