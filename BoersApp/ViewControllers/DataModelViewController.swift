@@ -1,5 +1,5 @@
 //
-//  DrawerContent.swift
+//  DataModelViewController.swift
 //  BoersApp
 //
 //  Created by Alex Alekseev on 06.04.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DrawerContentViewController: UIViewController {
+class DataModelViewController: UIViewController {
     enum SectionType {
         case dataModelSection
     }
@@ -21,7 +21,7 @@ class DrawerContentViewController: UIViewController {
     }
 }
 
-extension DrawerContentViewController: UITableViewDataSource {
+extension DataModelViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionType = sections[section]
         switch  sectionType {
