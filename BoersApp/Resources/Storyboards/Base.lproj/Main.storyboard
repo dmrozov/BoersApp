@@ -91,6 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.16788150090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="TLj-rA-iRh"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGo-hq-Ohv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,13 +105,28 @@
                     <view key="view" contentMode="scaleToFill" id="cbV-wk-AkZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dhU-at-6bQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dhU-at-6bQ" secondAttribute="bottom" id="3U8-Vq-qqD"/>
+                            <constraint firstItem="dhU-at-6bQ" firstAttribute="top" secondItem="Wpg-mh-PoB" secondAttribute="top" id="9IO-fE-0ai"/>
+                            <constraint firstItem="dhU-at-6bQ" firstAttribute="leading" secondItem="Wpg-mh-PoB" secondAttribute="leading" id="h2i-53-SXK"/>
+                            <constraint firstItem="dhU-at-6bQ" firstAttribute="trailing" secondItem="Wpg-mh-PoB" secondAttribute="trailing" id="pNf-9m-gBI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Wpg-mh-PoB"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="dhU-at-6bQ" id="d5O-NG-RiP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgj-eh-dlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="236"/>
+            <point key="canvasLocation" x="1456.8" y="235.68215892053973"/>
         </scene>
     </scenes>
 </document>

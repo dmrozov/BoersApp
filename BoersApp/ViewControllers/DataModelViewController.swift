@@ -1,5 +1,5 @@
 //
-//  DrawerContent.swift
+//  DataModelViewController.swift
 //  BoersApp
 //
 //  Created by Alex Alekseev on 06.04.2019.
@@ -8,25 +8,20 @@
 
 import UIKit
 
-class DrawerContentViewController: UIViewController {
+class DataModelViewController: UIViewController {
     enum SectionType {
         case dataModelSection
     }
-    @IBOutlet var tableView: UITableView! {
-        didSet {
-            tableView.dataSource = self
-            tableView.registerNibModels(nibModels:
-                [DataTableViewCellModel.self])
-        }
-    }
+    @IBOutlet var tableView: UITableView!
     var dataModelArray: [DataModel] = []
     var sections: [SectionType] = [.dataModelSection]
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureDataModelViewController()
     }
 }
 
-extension DrawerContentViewController: UITableViewDataSource {
+extension DataModelViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionType = sections[section]
         switch  sectionType {
@@ -46,5 +41,12 @@ extension DrawerContentViewController: UITableViewDataSource {
             model = DataTableViewCellModel(dataModel: dataModel)
         }
         return  tableView.dequeueReusableCell(withModel: model, for: indexPath)
+    }
+    func configureDataModelViewController() {
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 45
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.registerNibModels(nibModels:
+            [DataTableViewCellModel.self])
     }
 }

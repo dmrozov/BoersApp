@@ -13,6 +13,14 @@
 		32EFC03D220C72C8003F175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03B220C72C8003F175B /* Main.storyboard */; };
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
+		B5278D5E225A63C100CDA7E4 /* DataTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5278D5D225A63C100CDA7E4 /* DataTableViewCellModel.swift */; };
+		B54548C12259045400205779 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C02259045400205779 /* CellViewModel.swift */; };
+		B54548C7225907D300205779 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C5225907D300205779 /* DataTableViewCell.swift */; };
+		B54548C8225907D300205779 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54548C6225907D300205779 /* DataTableViewCell.xib */; };
+		B54548CB2259089300205779 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548CA2259089300205779 /* DataModel.swift */; };
+		B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAB2259174F00E21FA4 /* PermissionManager.swift */; };
+		B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */; };
+		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
 		B5AD16F62244FB5300B59498 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD16F52244FB5300B59498 /* Step.swift */; };
 		B5EDF8DC2251326A0084BC63 /* PrimaryContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */; };
 		B5EDF8DE225132BF0084BC63 /* DrawerContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */; };
@@ -30,7 +38,15 @@
 		32EFC041220C72CB003F175B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383C632CF69DD4242D240E76 /* Pods-BoersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.release.xcconfig"; sourceTree = "<group>"; };
+		B5278D5D225A63C100CDA7E4 /* DataTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCellModel.swift; sourceTree = "<group>"; };
+		B54548C02259045400205779 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		B54548C5225907D300205779 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		B54548C6225907D300205779 /* DataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
+		B54548CA2259089300205779 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		B54DED03762260821AA8E982 /* Pods_BoersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B587DEAB2259174F00E21FA4 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = BoersApp/Helpers/PermissionManager.swift; sourceTree = SOURCE_ROOT; };
+		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Extensions/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
+		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Extensions/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryContentViewController.swift; sourceTree = "<group>"; };
 		B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerContentViewController.swift; sourceTree = "<group>"; };
@@ -50,13 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		322B2424225A617800FA8488 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B54548C02259045400205779 /* CellViewModel.swift */,
+				B587DEAB2259174F00E21FA4 /* PermissionManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		32E91638223CE0BC00C22561 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				32EFC03B220C72C8003F175B /* Main.storyboard */,
-				32EFC040220C72CB003F175B /* LaunchScreen.storyboard */,
-				32EFC03E220C72CB003F175B /* Assets.xcassets */,
-				32EFC043220C72CB003F175B /* Info.plist */,
+				B54548C42259079200205779 /* Support Files */,
+				B54548C22259076B00205779 /* Storyboards */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -66,6 +89,7 @@
 			children = (
 				32E9163B223CE3DA00C22561 /* Product.swift */,
 				B5AD16F52244FB5300B59498 /* Step.swift */,
+				B54548CA2259089300205779 /* DataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,11 +127,59 @@
 			isa = PBXGroup;
 			children = (
 				32EFC037220C72C8003F175B /* AppDelegate.swift */,
+				B5278D5F225A646F00CDA7E4 /* Extensions */,
+				B54548C9225907E100205779 /* Cells */,
 				32E9163A223CE1FF00C22561 /* ViewControllers */,
 				32E91639223CE1E700C22561 /* Models */,
+				322B2424225A617800FA8488 /* Helpers */,
 				32E91638223CE0BC00C22561 /* Resources */,
 			);
 			path = BoersApp;
+			sourceTree = "<group>";
+		};
+		B5278D5F225A646F00CDA7E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B587DEAD2259174F00E21FA4 /* String+Localized.swift */,
+				B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5278D60225A652900CDA7E4 /* DataTable */ = {
+			isa = PBXGroup;
+			children = (
+				B54548C5225907D300205779 /* DataTableViewCell.swift */,
+				B5278D5D225A63C100CDA7E4 /* DataTableViewCellModel.swift */,
+				B54548C6225907D300205779 /* DataTableViewCell.xib */,
+			);
+			path = DataTable;
+			sourceTree = "<group>";
+		};
+		B54548C22259076B00205779 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				32EFC03B220C72C8003F175B /* Main.storyboard */,
+				32EFC040220C72CB003F175B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B54548C42259079200205779 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				32EFC043220C72CB003F175B /* Info.plist */,
+				32EFC03E220C72CB003F175B /* Assets.xcassets */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		B54548C9225907E100205779 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B5278D60225A652900CDA7E4 /* DataTable */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E4579A778D3CF04DEC12539E /* Frameworks */ = {
@@ -190,6 +262,7 @@
 			files = (
 				32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */,
 				32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */,
+				B54548C8225907D300205779 /* DataTableViewCell.xib in Resources */,
 				32EFC03D220C72C8003F175B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,7 +318,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -262,7 +335,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -274,11 +347,18 @@
 			files = (
 				32EFC03A220C72C8003F175B /* ScannerViewController.swift in Sources */,
 				B5AD16F62244FB5300B59498 /* Step.swift in Sources */,
+				B54548C12259045400205779 /* CellViewModel.swift in Sources */,
+				B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */,
+				B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */,
 				B5EDF8DE225132BF0084BC63 /* DrawerContentViewController.swift in Sources */,
 				B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */,
+				B54548CB2259089300205779 /* DataModel.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
+				B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */,
+				B54548C7225907D300205779 /* DataTableViewCell.swift in Sources */,
 				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
 				B5EDF8DC2251326A0084BC63 /* PrimaryContentViewController.swift in Sources */,
+				B5278D5E225A63C100CDA7E4 /* DataTableViewCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +507,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6YTXPQ772;
-				INFOPLIST_FILE = "$(SRCROOT)/BoersApp/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BoersApp/Resources/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6YTXPQ772;
-				INFOPLIST_FILE = "$(SRCROOT)/BoersApp/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BoersApp/Resources/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
