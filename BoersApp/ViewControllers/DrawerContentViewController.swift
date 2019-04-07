@@ -15,8 +15,6 @@ class DrawerContentViewController: UIViewController {
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
-            tableView.estimatedRowHeight = 45
-            tableView.rowHeight = UITableView.automaticDimension
             tableView.registerNibModels(nibModels:
                 [DataTableViewCellModel.self])
         }
