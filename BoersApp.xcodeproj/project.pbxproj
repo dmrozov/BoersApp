@@ -21,6 +21,7 @@
 		B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAB2259174F00E21FA4 /* PermissionManager.swift */; };
 		B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */; };
 		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
+		B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D1CAD225A67FF0068AC10 /* Job.swift */; };
 		B5AD16F62244FB5300B59498 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD16F52244FB5300B59498 /* Step.swift */; };
 		B5EDF8DC2251326A0084BC63 /* PrimaryContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */; };
 		B5EDF8DE225132BF0084BC63 /* DrawerContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */; };
@@ -47,6 +48,7 @@
 		B587DEAB2259174F00E21FA4 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = BoersApp/Helpers/PermissionManager.swift; sourceTree = SOURCE_ROOT; };
 		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Extensions/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
 		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Extensions/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
+		B58D1CAD225A67FF0068AC10 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryContentViewController.swift; sourceTree = "<group>"; };
 		B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerContentViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				32E9163B223CE3DA00C22561 /* Product.swift */,
 				B5AD16F52244FB5300B59498 /* Step.swift */,
 				B54548CA2259089300205779 /* DataModel.swift */,
+				B58D1CAD225A67FF0068AC10 /* Job.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
 				B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */,
 				B54548C7225907D300205779 /* DataTableViewCell.swift in Sources */,
+				B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */,
 				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
 				B5EDF8DC2251326A0084BC63 /* PrimaryContentViewController.swift in Sources */,
 				B5278D5E225A63C100CDA7E4 /* DataTableViewCellModel.swift in Sources */,
