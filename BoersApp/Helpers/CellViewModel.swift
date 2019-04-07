@@ -46,13 +46,3 @@ extension UITableView {
         }
     }
 }
-
-struct DataTableViewCellModel {
-    let dataModel: DataModel
-}
-
- extension DataTableViewCellModel: CellViewModel {
-    func setup(cell: DataTableViewCell) {
-        cell.labelDataModel.text = dataModel.name
-    }
-}
