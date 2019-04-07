@@ -42,9 +42,9 @@
 		B54548C6225907D300205779 /* DataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
 		B54548CA2259089300205779 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		B54DED03762260821AA8E982 /* Pods_BoersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B587DEAB2259174F00E21FA4 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = "BoersApp/Resources/Support Files/Helpers/PermissionManager.swift"; sourceTree = SOURCE_ROOT; };
-		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Resources/Support Files/Helpers/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
-		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Resources/Support Files/Helpers/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
+		B587DEAB2259174F00E21FA4 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = BoersApp/Helpers/PermissionManager.swift; sourceTree = SOURCE_ROOT; };
+		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Helpers/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
+		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Helpers/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryContentViewController.swift; sourceTree = "<group>"; };
 		B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerContentViewController.swift; sourceTree = "<group>"; };
@@ -64,11 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		322B2424225A617800FA8488 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B587DEAB2259174F00E21FA4 /* PermissionManager.swift */,
+				B587DEAD2259174F00E21FA4 /* String+Localized.swift */,
+				B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		32E91638223CE0BC00C22561 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				B54548C42259079200205779 /* Support Files */,
-				B54548C32259077D00205779 /* Xibs */,
 				B54548C22259076B00205779 /* Storyboards */,
 			);
 			path = Resources;
@@ -88,7 +97,6 @@
 		32E9163A223CE1FF00C22561 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B54548C9225907E100205779 /* Cells */,
 				B5EDF8DF225134330084BC63 /* AuthViewController.swift */,
 				32EFC039220C72C8003F175B /* ScannerViewController.swift */,
 				B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */,
@@ -118,8 +126,11 @@
 		32EFC036220C72C8003F175B /* BoersApp */ = {
 			isa = PBXGroup;
 			children = (
+				32EFC037220C72C8003F175B /* AppDelegate.swift */,
+				B54548C9225907E100205779 /* Cells */,
 				32E9163A223CE1FF00C22561 /* ViewControllers */,
 				32E91639223CE1E700C22561 /* Models */,
+				322B2424225A617800FA8488 /* Helpers */,
 				32E91638223CE0BC00C22561 /* Resources */,
 			);
 			path = BoersApp;
@@ -134,19 +145,9 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		B54548C32259077D00205779 /* Xibs */ = {
-			isa = PBXGroup;
-			children = (
-				B54548C6225907D300205779 /* DataTableViewCell.xib */,
-			);
-			path = Xibs;
-			sourceTree = "<group>";
-		};
 		B54548C42259079200205779 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B587DEAA2259172A00E21FA4 /* Helpers */,
-				32EFC037220C72C8003F175B /* AppDelegate.swift */,
 				32EFC043220C72CB003F175B /* Info.plist */,
 				32EFC03E220C72CB003F175B /* Assets.xcassets */,
 			);
@@ -157,19 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				B54548C5225907D300205779 /* DataTableViewCell.swift */,
+				B54548C6225907D300205779 /* DataTableViewCell.xib */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		B587DEAA2259172A00E21FA4 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B587DEAB2259174F00E21FA4 /* PermissionManager.swift */,
-				B587DEAD2259174F00E21FA4 /* String+Localized.swift */,
-				B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */,
-			);
-			name = Helpers;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E4579A778D3CF04DEC12539E /* Frameworks */ = {
