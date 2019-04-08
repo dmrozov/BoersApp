@@ -10,9 +10,9 @@ import UIKit
 import AVFoundation
 import Pulley
 
-class ScannerViewController: UIViewController {
-
-    private var video = AVCaptureVideoPreviewLayer()
+class ScannerViewController: PrimaryContentViewController {
+    // MARK: - Camera instance should be commented to avoid errors with simulator
+   // private var video = AVCaptureVideoPreviewLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +35,12 @@ class ScannerViewController: UIViewController {
         output.setMetadataObjectsDelegate(self, queue: .main)
         output.metadataObjectTypes = [.qr]
         session.addOutput(output)
-
+        // MARK: - As we said before, we should to remove this
+        /*
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
+        */
         session.startRunning()
     }
 }

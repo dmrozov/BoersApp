@@ -14,6 +14,7 @@
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
 		B5278D5E225A63C100CDA7E4 /* DataTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5278D5D225A63C100CDA7E4 /* DataTableViewCellModel.swift */; };
+		B53C3B5D225BA1F30002BD6C /* PrimaryContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53C3B5C225BA1F30002BD6C /* PrimaryContentViewController.swift */; };
 		B54548C12259045400205779 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C02259045400205779 /* CellViewModel.swift */; };
 		B54548C7225907D300205779 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C5225907D300205779 /* DataTableViewCell.swift */; };
 		B54548C8225907D300205779 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54548C6225907D300205779 /* DataTableViewCell.xib */; };
@@ -23,7 +24,6 @@
 		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
 		B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D1CAD225A67FF0068AC10 /* Job.swift */; };
 		B5AD16F62244FB5300B59498 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD16F52244FB5300B59498 /* Step.swift */; };
-		B5EDF8DC2251326A0084BC63 /* PrimaryContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */; };
 		B5EDF8DE225132BF0084BC63 /* DrawerContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */; };
 		B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DF225134330084BC63 /* AuthViewController.swift */; };
 		D56A1DCEC59F59F608E73CB7 /* Pods_BoersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DED03762260821AA8E982 /* Pods_BoersApp.framework */; };
@@ -40,6 +40,7 @@
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383C632CF69DD4242D240E76 /* Pods-BoersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.release.xcconfig"; sourceTree = "<group>"; };
 		B5278D5D225A63C100CDA7E4 /* DataTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCellModel.swift; sourceTree = "<group>"; };
+		B53C3B5C225BA1F30002BD6C /* PrimaryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryContentViewController.swift; sourceTree = "<group>"; };
 		B54548C02259045400205779 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		B54548C5225907D300205779 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		B54548C6225907D300205779 /* DataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Extensions/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		B58D1CAD225A67FF0068AC10 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
-		B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryContentViewController.swift; sourceTree = "<group>"; };
 		B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerContentViewController.swift; sourceTree = "<group>"; };
 		B5EDF8DF225134330084BC63 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		EC09C0BA55C6549921B268E4 /* Pods-BoersApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,8 +102,8 @@
 			children = (
 				B5EDF8DF225134330084BC63 /* AuthViewController.swift */,
 				32EFC039220C72C8003F175B /* ScannerViewController.swift */,
-				B5EDF8DB2251326A0084BC63 /* PrimaryContentViewController.swift */,
 				B5EDF8DD225132BF0084BC63 /* DrawerContentViewController.swift */,
+				B53C3B5C225BA1F30002BD6C /* PrimaryContentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -356,12 +356,12 @@
 				B5EDF8DE225132BF0084BC63 /* DrawerContentViewController.swift in Sources */,
 				B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */,
 				B54548CB2259089300205779 /* DataModel.swift in Sources */,
+				B53C3B5D225BA1F30002BD6C /* PrimaryContentViewController.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
 				B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */,
 				B54548C7225907D300205779 /* DataTableViewCell.swift in Sources */,
 				B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */,
 				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
-				B5EDF8DC2251326A0084BC63 /* PrimaryContentViewController.swift in Sources */,
 				B5278D5E225A63C100CDA7E4 /* DataTableViewCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
