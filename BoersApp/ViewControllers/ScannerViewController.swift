@@ -12,31 +12,27 @@ import Pulley
 
 class ScannerViewController: PrimaryContentViewController {
     // MARK: - Camera instance should be commented to avoid errors with simulator
-   // private var video = AVCaptureVideoPreviewLayer()
-
+    // all comments in this file will protect app
+    // private var video = AVCaptureVideoPreviewLayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureScanner()
     }
-
     // MARK: - Private funcs
-
     private func configureScanner() {
         let session = AVCaptureSession()
-        let captureDevice = AVCaptureDevice.default(for: .video)
-        do {
-            let input = try AVCaptureDeviceInput(device: captureDevice!)
-            session.addInput(input)
-        } catch {
-            print ("ERROR")
-        }
-
+        //let captureDevice = AVCaptureDevice.default(for: .video)
+        /*
+         do {
+         let input = try AVCaptureDeviceInput(device: captureDevice!)
+         session.addInput(input)
+         } catch {
+         print ("ERROR")
+         }
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: .main)
         output.metadataObjectTypes = [.qr]
         session.addOutput(output)
-        // MARK: - As we said before, we should to remove this
-        /*
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
