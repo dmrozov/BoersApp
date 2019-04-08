@@ -14,6 +14,7 @@ class ScannerViewController: PrimaryContentViewController {
     // MARK: - Camera instance should be commented to avoid errors with simulator
     // all comments in this file will protect app
     // private var video = AVCaptureVideoPreviewLayer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureScanner()
