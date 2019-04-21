@@ -20,8 +20,8 @@ class AuthViewController: UIViewController {
                 shared.openURL(url)
             }
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }

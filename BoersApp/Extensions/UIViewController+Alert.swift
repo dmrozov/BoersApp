@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+
     func showMessageAlert(title: String?, message: String? = nil,
                           buttonTitle: String? = "Ок".localized, action: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -17,6 +18,7 @@ extension UIViewController {
         })
         self.present(alert, animated: true, completion: nil)
     }
+    
     func showConfirmationAlert(title: String?, message: String? = nil,
                                buttonFirstTitle: String? = "Ок".localized,
                                buttonSecondTitle: String? = "Cancel".localized,
