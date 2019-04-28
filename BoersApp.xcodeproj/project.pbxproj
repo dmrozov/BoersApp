@@ -20,6 +20,7 @@
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
 		B5278D5E225A63C100CDA7E4 /* JobTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5278D5D225A63C100CDA7E4 /* JobTableViewCellModel.swift */; };
+		B53652032275C80200C845E8 /* ScannerDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53652022275C80200C845E8 /* ScannerDataProcessor.swift */; };
 		B538037F225B8B59000AE4DF /* UIFont+SFProFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538037E225B8B59000AE4DF /* UIFont+SFProFont.swift */; };
 		B5380393225B98C5000AE4DF /* SF-Pro-Display-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5380381225B98C3000AE4DF /* SF-Pro-Display-MediumItalic.otf */; };
 		B5380394225B98C5000AE4DF /* SF-Pro-Display-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5380382225B98C3000AE4DF /* SF-Pro-Display-UltralightItalic.otf */; };
@@ -69,6 +70,7 @@
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383C632CF69DD4242D240E76 /* Pods-BoersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.release.xcconfig"; sourceTree = "<group>"; };
 		B5278D5D225A63C100CDA7E4 /* JobTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCellModel.swift; sourceTree = "<group>"; };
+		B53652022275C80200C845E8 /* ScannerDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerDataProcessor.swift; sourceTree = "<group>"; };
 		B538037E225B8B59000AE4DF /* UIFont+SFProFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+SFProFont.swift"; sourceTree = "<group>"; };
 		B5380381225B98C3000AE4DF /* SF-Pro-Display-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-MediumItalic.otf"; sourceTree = "<group>"; };
 		B5380382225B98C3000AE4DF /* SF-Pro-Display-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-UltralightItalic.otf"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		322B2424225A617800FA8488 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B53652022275C80200C845E8 /* ScannerDataProcessor.swift */,
 				B54548C02259045400205779 /* CellViewModel.swift */,
 				B587DEAB2259174F00E21FA4 /* PermissionManager.swift */,
 				32B44FC9226C7106007B0ABB /* Networking stuff */,
@@ -471,6 +474,7 @@
 				B5EDF8DE225132BF0084BC63 /* ProductInfoViewController.swift in Sources */,
 				B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
+				B53652032275C80200C845E8 /* ScannerDataProcessor.swift in Sources */,
 				3260EE95225C0058003F7A7B /* ContainerViewController.swift in Sources */,
 				B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */,
 				3260EE98225C1532003F7A7B /* ApiClient.swift in Sources */,

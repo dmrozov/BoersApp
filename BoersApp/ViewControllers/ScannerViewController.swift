@@ -21,8 +21,9 @@ class ScannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // TODO: - в didViewappear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if PermissionsManager.isAllowed(type: .camera) {
             configureScanner()
         } else {
@@ -90,18 +91,5 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 }
 
-// TODO: - в отдельный файл
 
-enum ScannerDataProcessor {
 
-    static func extractID(from stringURL: String) -> String? {
-        if let url = URL(string: stringURL), let productNumber = url.queryParameters?["Id"] {
-            return productNumber
-        }
-        if let productNumber = stringURL.components(separatedBy: "/").last {
-            if Int(productNumber) == nil { return nil }
-            return productNumber
-        }
-        return nil
-    }
-}
