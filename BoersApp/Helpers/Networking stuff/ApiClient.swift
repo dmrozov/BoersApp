@@ -51,7 +51,6 @@ struct ApiClient {
         reachability?.startListening()
     }
 
-
     @discardableResult
     static func requestArray<T: Mappable>(_ path: String, serverUrl: String = serverUrl, method: HTTPMethod = .get,
                                           queryParameters: ConvertibleParameters? = nil, keyPath: String? = nil, bodyParameters: Parameters? = nil,

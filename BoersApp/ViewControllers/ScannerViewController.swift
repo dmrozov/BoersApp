@@ -10,15 +10,12 @@ import UIKit
 import AVFoundation
 import Pulley
 
-//TODO: -  Make it ScannerViewController property
-var captureSession: AVCaptureSession!
-
 class ScannerViewController: UIViewController {
 
     @IBOutlet var videoView: UIView!
 
     private var video: AVCaptureVideoPreviewLayer!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -46,25 +43,25 @@ class ScannerViewController: UIViewController {
     // MARK: - Private funcs
 
     private func configureScanner() {
-        captureSession = AVCaptureSession()
+        CaptureSessionController.captureSession = AVCaptureSession()
         let captureDevice = AVCaptureDevice.default(for: .video)
 
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
-            captureSession.addInput(input)
+            CaptureSessionController.captureSession.addInput(input)
         } catch {
             print(error)
         }
         let output = AVCaptureMetadataOutput()
-        captureSession.addOutput(output)
+        CaptureSessionController.captureSession.addOutput(output)
         output.metadataObjectTypes = [.qr]
         output.setMetadataObjectsDelegate(self, queue: .main)
 
-        video = AVCaptureVideoPreviewLayer(session: captureSession)
+        video = AVCaptureVideoPreviewLayer(session: CaptureSessionController.captureSession)
         video.videoGravity = .resizeAspectFill
         videoView.layer.addSublayer(video)
         view.sendSubviewToBack(videoView)
-        captureSession.startRunning()
+        CaptureSessionController.captureSession.startRunning()
     }
 }
 
@@ -84,12 +81,9 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     productInfoVC.getProductInfo(jobNum: number)
                     pulleyViewController!.setDrawerPosition(position: .open, animated: true)
                 } else {
-                    showMessageAlert(title: "Error", message: "Wrong QR code", buttonTitle: "OK") // TODO: - Проверить, что по кнопке ок все закрывается
+                    showMessageAlert(title: "Error", message: "Wrong QR code", buttonTitle: "OK")
                 }
             }
         }
     }
 }
-
-
-

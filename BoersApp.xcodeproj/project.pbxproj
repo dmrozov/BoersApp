@@ -43,6 +43,7 @@
 		B54548C12259045400205779 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C02259045400205779 /* CellViewModel.swift */; };
 		B54548C7225907D300205779 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C5225907D300205779 /* JobTableViewCell.swift */; };
 		B54548C8225907D300205779 /* JobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54548C6225907D300205779 /* JobTableViewCell.xib */; };
+		B57D29D5228998C200FE453D /* CaptureSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D29D4228998C200FE453D /* CaptureSessionController.swift */; };
 		B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAB2259174F00E21FA4 /* PermissionManager.swift */; };
 		B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */; };
 		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
@@ -94,6 +95,7 @@
 		B54548C5225907D300205779 /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		B54548C6225907D300205779 /* JobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobTableViewCell.xib; sourceTree = "<group>"; };
 		B54DED03762260821AA8E982 /* Pods_BoersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B57D29D4228998C200FE453D /* CaptureSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionController.swift; sourceTree = "<group>"; };
 		B587DEAB2259174F00E21FA4 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = BoersApp/Helpers/PermissionManager.swift; sourceTree = SOURCE_ROOT; };
 		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Extensions/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
 		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Extensions/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
@@ -119,6 +121,7 @@
 		322B2424225A617800FA8488 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B57D29D4228998C200FE453D /* CaptureSessionController.swift */,
 				B53652022275C80200C845E8 /* ScannerDataProcessor.swift */,
 				B54548C02259045400205779 /* CellViewModel.swift */,
 				B587DEAB2259174F00E21FA4 /* PermissionManager.swift */,
@@ -471,6 +474,7 @@
 				B54548C12259045400205779 /* CellViewModel.swift in Sources */,
 				B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */,
 				B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */,
+				B57D29D5228998C200FE453D /* CaptureSessionController.swift in Sources */,
 				B5EDF8DE225132BF0084BC63 /* ProductInfoViewController.swift in Sources */,
 				B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
@@ -636,7 +640,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.SPBSTU.BoersApp;
+				PRODUCT_BUNDLE_IDENTIFIER = AK.CSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,7 +659,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.SPBSTU.BoersApp;
+				PRODUCT_BUNDLE_IDENTIFIER = AK.CSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
