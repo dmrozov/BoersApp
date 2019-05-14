@@ -42,7 +42,6 @@ class ProductInfoViewController: UIViewController {
     func getProductInfo(jobNum: String) {
         jobs.removeAll()
         tableView.reloadData()
-        
         ApiClient.getJobs(jobNum) { (jobs, error) in
             if let jobs = jobs {
                 if jobs.isEmpty {
@@ -97,9 +96,9 @@ extension ProductInfoViewController: PulleyDrawerViewControllerDelegate {
 
     func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
         if drawer.drawerPosition == .open {
-            captureSession?.stopRunning()
+            CaptureSession.instance.captureSession?.stopRunning()
         } else {
-            captureSession?.startRunning()
+            CaptureSession.instance.captureSession?.startRunning()
         }
     }
 }

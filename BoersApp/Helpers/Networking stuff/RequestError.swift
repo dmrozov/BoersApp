@@ -13,13 +13,12 @@ enum RequestError: Error {
     case network
     case serverError
 
-    // TODO: - Translate to english
     var desc: String {
         switch self {
         case .network:
-            return "Отсутствует Интернет-соединение. \nПроверьте подключение к wi-fi или \nсотовой сети и повторите попытку."
+            return "No wi-Fi connection. Check your wi-fi connection and try again."
         case .serverError:
-            return "Не удалось загрузить данные \nс портала «Виртуальная школа». \nПовторите попытку позднее."
+            return "Data loading error. Try again later."
         }
     }
 }

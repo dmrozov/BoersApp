@@ -10,9 +10,6 @@ import UIKit
 import AVFoundation
 import Pulley
 
-//TODO: -  Make it ScannerViewController property
-var captureSession: AVCaptureSession!
-
 class ScannerViewController: UIViewController {
 
     @IBOutlet var videoView: UIView!
@@ -21,20 +18,9 @@ class ScannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // TODO: - в didViewappear
-        if PermissionsManager.isAllowed(type: .camera) {
-            configureScanner()
-        } else {
-            PermissionsManager.requireAccess(from: self, to: .camera) { success in
-                if success {
-                    self.configureScanner()
-                    self.video.frame = self.videoView.layer.bounds
-                }
-            }
-        }
+        permissionManagerConfigure()
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
@@ -45,25 +31,38 @@ class ScannerViewController: UIViewController {
     // MARK: - Private funcs
 
     private func configureScanner() {
-        captureSession = AVCaptureSession()
+        CaptureSession.instance.captureSession = AVCaptureSession()
         let captureDevice = AVCaptureDevice.default(for: .video)
 
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
-            captureSession.addInput(input)
+            CaptureSession.instance.captureSession.addInput(input)
         } catch {
             print(error)
         }
         let output = AVCaptureMetadataOutput()
-        captureSession.addOutput(output)
+        CaptureSession.instance.captureSession.addOutput(output)
         output.metadataObjectTypes = [.qr]
         output.setMetadataObjectsDelegate(self, queue: .main)
 
-        video = AVCaptureVideoPreviewLayer(session: captureSession)
+        video = AVCaptureVideoPreviewLayer(session: CaptureSession.instance.captureSession)
         video.videoGravity = .resizeAspectFill
         videoView.layer.addSublayer(video)
         view.sendSubviewToBack(videoView)
-        captureSession.startRunning()
+        CaptureSession.instance.captureSession.startRunning()
+    }
+    
+    private func permissionManagerConfigure() {
+        if PermissionsManager.isAllowed(type: .camera) {
+            configureScanner()
+        } else {
+            PermissionsManager.requireAccess(from: self, to: .camera) { success in
+                if success {
+                    self.configureScanner()
+                    self.video.frame = self.videoView.layer.bounds
+                }
+            }
+        }
     }
 }
 
@@ -83,25 +82,9 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     productInfoVC.getProductInfo(jobNum: number)
                     pulleyViewController!.setDrawerPosition(position: .open, animated: true)
                 } else {
-                    showMessageAlert(title: "Error", message: "Wrong QR code", buttonTitle: "OK") // TODO: - Проверить, что по кнопке ок все закрывается
+                    showMessageAlert(title: "Error", message: "Wrong QR code", buttonTitle: "OK")
                 }
             }
         }
-    }
-}
-
-// TODO: - в отдельный файл
-
-enum ScannerDataProcessor {
-
-    static func extractID(from stringURL: String) -> String? {
-        if let url = URL(string: stringURL), let productNumber = url.queryParameters?["Id"] {
-            return productNumber
-        }
-        if let productNumber = stringURL.components(separatedBy: "/").last {
-            if Int(productNumber) == nil { return nil }
-            return productNumber
-        }
-        return nil
     }
 }

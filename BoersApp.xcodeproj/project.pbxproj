@@ -47,6 +47,8 @@
 		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
 		B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D1CAD225A67FF0068AC10 /* Job.swift */; };
 		B5AD16F62244FB5300B59498 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD16F52244FB5300B59498 /* Step.swift */; };
+		B5C05110228B04B100D362B9 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0510F228B04B100D362B9 /* CaptureSession.swift */; };
+		B5C05112228B087000D362B9 /* ScannerDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C05111228B087000D362B9 /* ScannerDataProcessor.swift */; };
 		B5EDF8DE225132BF0084BC63 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DD225132BF0084BC63 /* ProductInfoViewController.swift */; };
 		B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DF225134330084BC63 /* AuthViewController.swift */; };
 		D56A1DCEC59F59F608E73CB7 /* Pods_BoersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DED03762260821AA8E982 /* Pods_BoersApp.framework */; };
@@ -97,6 +99,8 @@
 		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Extensions/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		B58D1CAD225A67FF0068AC10 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		B5C0510F228B04B100D362B9 /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
+		B5C05111228B087000D362B9 /* ScannerDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerDataProcessor.swift; sourceTree = "<group>"; };
 		B5EDF8DD225132BF0084BC63 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		B5EDF8DF225134330084BC63 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		EC09C0BA55C6549921B268E4 /* Pods-BoersApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 		322B2424225A617800FA8488 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B5C05111228B087000D362B9 /* ScannerDataProcessor.swift */,
+				B5C0510F228B04B100D362B9 /* CaptureSession.swift */,
 				B54548C02259045400205779 /* CellViewModel.swift */,
 				B587DEAB2259174F00E21FA4 /* PermissionManager.swift */,
 				32B44FC9226C7106007B0ABB /* Networking stuff */,
@@ -462,8 +468,10 @@
 				B538037F225B8B59000AE4DF /* UIFont+SFProFont.swift in Sources */,
 				32B44FC8226C708E007B0ABB /* ParameterConvertible.swift in Sources */,
 				32B44FCD226D0C85007B0ABB /* ApiRequests.swift in Sources */,
+				B5C05112228B087000D362B9 /* ScannerDataProcessor.swift in Sources */,
 				32EFC03A220C72C8003F175B /* ScannerViewController.swift in Sources */,
 				3264BB2222665F26009363AA /* URL+Parameters.swift in Sources */,
+				B5C05110228B04B100D362B9 /* CaptureSession.swift in Sources */,
 				B5AD16F62244FB5300B59498 /* Step.swift in Sources */,
 				B54548C12259045400205779 /* CellViewModel.swift in Sources */,
 				B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */,
