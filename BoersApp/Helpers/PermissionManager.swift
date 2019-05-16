@@ -54,10 +54,10 @@ final class PermissionsManager {
                               completion: @escaping (Bool) -> Void) {
         if !PermissionsManager.isAllowed(type: type) {
             PermissionsManager.requestAccess(forType: type) { success in
+                 DispatchQueue.main.async {
                 completion(success)
                 if !success {
-                    DispatchQueue.main.async {
-                        alertForSettingsWith(type: type, on: controller)
+                    alertForSettingsWith(type: type, on: controller)
                     }
                 }
             }
