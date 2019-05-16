@@ -10,7 +10,9 @@ import UIKit
 import AVFoundation
 import Pulley
 
-class ScannerViewController: UIViewController {
+final class ScannerViewController: UIViewController {
+
+    static var captureSession = AVCaptureSession()
 
     @IBOutlet var videoView: UIView!
 
@@ -31,25 +33,24 @@ class ScannerViewController: UIViewController {
     // MARK: - Private funcs
 
     private func configureScanner() {
-        CaptureSession.instance.captureSession = AVCaptureSession()
         let captureDevice = AVCaptureDevice.default(for: .video)
 
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
-            CaptureSession.instance.captureSession.addInput(input)
+            ScannerViewController.captureSession.addInput(input)
         } catch {
             print(error)
         }
         let output = AVCaptureMetadataOutput()
-        CaptureSession.instance.captureSession.addOutput(output)
+        ScannerViewController.captureSession.addOutput(output)
         output.metadataObjectTypes = [.qr]
         output.setMetadataObjectsDelegate(self, queue: .main)
 
-        video = AVCaptureVideoPreviewLayer(session: CaptureSession.instance.captureSession)
+        video = AVCaptureVideoPreviewLayer(session: ScannerViewController.captureSession)
         video.videoGravity = .resizeAspectFill
         videoView.layer.addSublayer(video)
         view.sendSubviewToBack(videoView)
-        CaptureSession.instance.captureSession.startRunning()
+        ScannerViewController.captureSession.startRunning()
     }
     
     private func permissionManagerConfigure() {
