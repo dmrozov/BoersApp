@@ -96,9 +96,9 @@ extension ProductInfoViewController: PulleyDrawerViewControllerDelegate {
 
     func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
         if drawer.drawerPosition == .open {
-            CaptureSessionController.captureSession?.stopRunning()
+            ScannerViewController.stopRunning()
         } else {
-            CaptureSessionController.captureSession?.startRunning()
+            ScannerViewController.startRunning()
         }
     }
 }

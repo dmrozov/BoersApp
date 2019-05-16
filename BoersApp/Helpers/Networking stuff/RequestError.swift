@@ -16,9 +16,9 @@ enum RequestError: Error {
     var desc: String {
         switch self {
         case .network:
-            return "Internet connection error. Check your Wi-Fi connection and try again."
+            return "No wi-Fi connection. Check your wi-fi connection and try again."
         case .serverError:
-            return "Failed to load data from the server. Try again later."
+            return "Data loading error. Try again later."
         }
     }
 }

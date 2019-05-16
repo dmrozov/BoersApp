@@ -10,15 +10,15 @@ import ObjectMapper
 import Alamofire
 import AlamofireObjectMapper
 
-typealias ResultBlock<T> = (_ result: T?, _ error: Error?) -> ()
-typealias RequestBlock = (Error?) -> ()
+typealias ResultBlock<T> = (_ result: T?, _ error: Error?) -> Void
+typealias RequestBlock = (Error?) -> Void
 
 let serverUrl = "https://app2019api.boers.nl/api/"
 
 struct ApiClient {
 
     private static var reachability: NetworkReachabilityManager?
-    private static var savedCallback: (() -> ())?
+    private static var savedCallback: (() -> Void)?
 
     // MARK: - Public funcs
 
@@ -84,8 +84,8 @@ struct ApiClient {
 }
     // MARK: - Private funcs
 
-    private static func makeRequest(_ path: String, serverUrl: String = serverUrl,
-                                    method: HTTPMethod = .get, queryParameters: ConvertibleParameters? = nil, bodyParameters: Parameters? = nil) -> DataRequest {
+    private static func makeRequest(_ path: String, serverUrl: String = serverUrl, method: HTTPMethod = .get,
+                                    queryParameters: ConvertibleParameters? = nil, bodyParameters: Parameters? = nil) -> DataRequest {
         var fullParameters = ConvertibleParameters()
         if let parameters = queryParameters {
             for (key, value) in parameters {
@@ -109,4 +109,3 @@ struct ApiClient {
         return result.replacingOccurrences(of: " ", with: "%20")
     }
 }
-

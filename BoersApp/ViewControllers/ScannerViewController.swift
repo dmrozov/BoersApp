@@ -10,27 +10,18 @@ import UIKit
 import AVFoundation
 import Pulley
 
-class ScannerViewController: UIViewController {
+final class ScannerViewController: UIViewController {
+
+    private static let captureSession = AVCaptureSession()
 
     @IBOutlet var videoView: UIView!
 
     private var video: AVCaptureVideoPreviewLayer!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if PermissionsManager.isAllowed(type: .camera) {
-            configureScanner()
-        } else {
-            PermissionsManager.requireAccess(from: self, to: .camera) { success in
-                if success {
-                    self.configureScanner()
-                    self.video.frame = self.videoView.layer.bounds
-                }
-            }
-        }
+
+        permissionManagerConfigure()
     }
 
     override func viewDidLayoutSubviews() {
@@ -43,25 +34,45 @@ class ScannerViewController: UIViewController {
     // MARK: - Private funcs
 
     private func configureScanner() {
-        CaptureSessionController.captureSession = AVCaptureSession()
         let captureDevice = AVCaptureDevice.default(for: .video)
 
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
-            CaptureSessionController.captureSession.addInput(input)
+            ScannerViewController.captureSession.addInput(input)
         } catch {
             print(error)
         }
         let output = AVCaptureMetadataOutput()
-        CaptureSessionController.captureSession.addOutput(output)
+        ScannerViewController.captureSession.addOutput(output)
         output.metadataObjectTypes = [.qr]
         output.setMetadataObjectsDelegate(self, queue: .main)
 
-        video = AVCaptureVideoPreviewLayer(session: CaptureSessionController.captureSession)
+        video = AVCaptureVideoPreviewLayer(session: ScannerViewController.captureSession)
         video.videoGravity = .resizeAspectFill
         videoView.layer.addSublayer(video)
         view.sendSubviewToBack(videoView)
-        CaptureSessionController.captureSession.startRunning()
+        ScannerViewController.captureSession.startRunning()
+    }
+
+    private func permissionManagerConfigure() {
+        if PermissionsManager.isAllowed(type: .camera) {
+            configureScanner()
+        } else {
+            PermissionsManager.requireAccess(from: self, to: .camera) { success in
+                if success {
+                    self.configureScanner()
+                    self.video.frame = self.videoView.layer.bounds
+                }
+            }
+        }
+    }
+
+    static func startRunning() {
+        ScannerViewController.captureSession.startRunning()
+    }
+
+    static func stopRunning() {
+        ScannerViewController.captureSession.stopRunning()
     }
 }
 
