@@ -21,7 +21,8 @@ final class Job: Mappable {
     var prodQty: String!
     var ium: String!
     var qtyCompvared: String!
-
+    var detailImage: String!
+    
     required init?(map: Map) {
     }
 
@@ -36,5 +37,7 @@ final class Job: Mappable {
         prodQty <- map["prodqty"]
         ium <- map["ium"]
         qtyCompvared <- map["QtyCompleted"]
+        //TODO: - Paste JSON image route
+        detailImage <- map[""]
     }
 }
