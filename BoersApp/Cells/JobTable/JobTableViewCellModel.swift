@@ -10,16 +10,12 @@ import UIKit
 
 struct JobTableViewCellModel {
     let job: Job
+    let title: String?
+    let showDisclosureIndicator: Bool = false
 }
-
+// TODO: - полный сетап ячейки сделать
 extension JobTableViewCellModel: CellViewModel {
     func setup(cell: JobTableViewCell) {
-        if job.jobCompvare == true {
-            cell.stateLabel.text = "Complete"
-            cell.stateLabel.textColor = UIColor.green
-        } else {
-            cell.stateLabel.text = "Not ready"
-            cell.stateLabel.textColor = UIColor.red
-        }
+//        cell.valueLabel
     }
 }

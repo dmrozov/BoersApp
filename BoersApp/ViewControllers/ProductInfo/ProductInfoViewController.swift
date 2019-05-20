@@ -8,41 +8,30 @@
 
 import UIKit
 import Pulley
-
+// TODO: - вернуть полосочку по дизайну вверху экрана
 class ProductInfoViewController: UIViewController {
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    enum SectionType {
-        case jobsSection
-    }
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
             tableView.tableFooterView = UIView()
             tableView.registerNibModels(nibModels:
-                [JobTableViewCellModel.self])
+                [JobTableViewCellModel.self, DetailImageTableViewCellModel.self])
         }
     }
 
-    var jobs: [Job] = [] {
-        didSet {
-            jobs.isEmpty ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
-        }
-    }
-    var sections: [SectionType] = [.jobsSection]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+    let dataSouce = ProductInfoDataSource()
 
     func getProductInfo(jobNum: String) {
-        jobs.removeAll()
+        dataSouce.job = nil
         tableView.reloadData()
-        ApiClient.getJobs(jobNum) { (jobs, error) in
+        activityIndicator.startAnimating()
+        ApiClient.getJobs(jobNum) { (jobs, _) in
             if let jobs = jobs {
                 if jobs.isEmpty {
                     self.showMessageAlert(title: "Error", message: "No jobs found", buttonTitle: "OK") {
@@ -52,9 +41,10 @@ class ProductInfoViewController: UIViewController {
                     }
 
                 }
-                self.jobs = jobs
+                self.dataSouce.job = jobs.first!
                 self.tableView.reloadData()
             }
+            self.activityIndicator.stopAnimating()
         }
     }
 }
@@ -62,24 +52,15 @@ class ProductInfoViewController: UIViewController {
 extension ProductInfoViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionType = sections[section]
-        switch  sectionType {
-        case .jobsSection:
-            return jobs.count
-        }
+        return dataSouce.numberOfRows(in: section)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return dataSouce.numberOfSections
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sectionType = sections[indexPath.section]
-        let model: CellViewAnyModel
-        switch sectionType {
-        case .jobsSection:
-            model = JobTableViewCellModel(job: jobs[indexPath.row])
-        }
+        guard let model = dataSouce.model(for: indexPath) else { return UITableViewCell() }
         return tableView.dequeueReusableCell(withModel: model, for: indexPath)
     }
 }
@@ -87,10 +68,10 @@ extension ProductInfoViewController: UITableViewDataSource {
 extension ProductInfoViewController: PulleyDrawerViewControllerDelegate {
 
     func supportedDrawerPositions() -> [PulleyPosition] {
-        return  [.collapsed, .open]
+        return  [.partiallyRevealed, .open]
     }
 
-    func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
+    func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
         return 0
     }
 
@@ -98,7 +79,9 @@ extension ProductInfoViewController: PulleyDrawerViewControllerDelegate {
         if drawer.drawerPosition == .open {
             ScannerViewController.stopRunning()
         } else {
-            ScannerViewController.startRunning()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                ScannerViewController.startRunning()
+            }
         }
     }
 }

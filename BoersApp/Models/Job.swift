@@ -11,33 +11,28 @@ import ObjectMapper
 
 final class Job: Mappable {
 
-    var company: String!
-    var jobCompvare: Bool!
-    var jobNum: String!
-    var partNum: String!
-    var revisionNum: String!
-    var drawNum: String!
+    var jobComplete: Bool!
+    var jobNumber: String!
+    var partNumber: String!
+    var revisionNumber: String!
+    var drawNumber: String!
     var partDescription: String!
     var prodQty: String!
-    var ium: String!
-    var qtyCompvared: String!
+    var dedlineDate: String!
     var detailImage: String!
-    
+
     required init?(map: Map) {
     }
 
     func mapping(map: Map) {
-        company <- map["company"]
-        jobCompvare <- map["jobcomplete"]
-        jobNum <- map["jobnum"]
-        partNum <- map["partnum"]
-        revisionNum <- map["revisionnum"]
-        drawNum <- map["drawnum"]
+        jobComplete <- map["jobcomplete"]
+        jobNumber <- map["jobnum"]
+        partNumber <- map["partnum"]
+        revisionNumber <- map["revisionnum"]
+        drawNumber <- map["drawnum"]
         partDescription <- map["partdescription"]
-        prodQty <- map["prodqty"]
-        ium <- map["ium"]
-        qtyCompvared <- map["QtyCompleted"]
-        //TODO: - Paste JSON image route
-        detailImage <- map[""]
+        prodQty <- map["ProdQty"]
+        dedlineDate <- map["DueDate"]
+        detailImage <- map["imageurl"]
     }
 }

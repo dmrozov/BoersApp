@@ -7,10 +7,11 @@
 //
 
 import UIKit
-
+// TODO: - Переименовать вюшки и ячейку в productInfo
 class JobTableViewCell: UITableViewCell {
 
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel! // titleLabel
     @IBOutlet var valueLabel: UILabel!
-    @IBOutlet var stateLabel: UILabel!
+    @IBOutlet var stateLabel: UILabel! // status
+
 }

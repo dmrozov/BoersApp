@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct DetailImageTableViewCellModel {
     let job: Job
@@ -14,12 +15,10 @@ struct DetailImageTableViewCellModel {
 
 extension DetailImageTableViewCellModel: CellViewModel {
     func setup(cell: DetailImageTableViewCell) {
-        if let url = URL(string: job.detailImage) {
-            do {
-                let data = try Data(contentsOf: url)
-                cell.detailImage.image = UIImage(data: data)
-            } catch let err {
-                print("Error : \(err.localizedDescription)")
+        cell.detailImage.image = #imageLiteral(resourceName: "product_template.png")
+        Alamofire.request(job.detailImage).responseData { result in
+            if let data = result.data, let image = UIImage(data: data) {
+                cell.detailImage.image = image
             }
         }
     }
