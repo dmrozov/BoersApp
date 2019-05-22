@@ -21,7 +21,7 @@ class ProductInfoViewController: UIViewController {
             tableView.dataSource = self
             tableView.tableFooterView = UIView()
             tableView.registerNibModels(nibModels:
-                [JobTableViewCellModel.self, DetailImageTableViewCellModel.self])
+                [ProductInfoViewCellModel.self, DetailImageTableViewCellModel.self])
         }
     }
 

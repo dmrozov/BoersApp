@@ -31,7 +31,21 @@ class ProductInfoDataSource {
             return DetailImageTableViewCellModel(job: job)
         case .info:
             let info = InfoType.allCases[indexPath.row]
-            return JobTableViewCellModel(job: job, title: info.title)
+            switch info {
+            case .drawNumPartDesc:
+                return ProductInfoViewCellModel(title: job.drawNumber, value: job.partDescription)
+            case .job:
+                return ProductInfoViewCellModel(title: info.title, value: job.jobNumber, showDisclosureIndicator: true)
+            case .partNum:
+                let status = job.jobComplete ? "Complete" : "In progress"
+                return ProductInfoViewCellModel(title: info.title, value: job.partNumber, status: status)
+            case .revision:
+                 return ProductInfoViewCellModel(title: info.title, value: job.revisionNumber)
+            case .qty:
+                 return ProductInfoViewCellModel(title: info.title, value: String(job.prodQty))
+            case .deadline:
+                 return ProductInfoViewCellModel(title: info.title, value: job.dedlineDate)
+            }
         }
     }
 

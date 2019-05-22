@@ -17,7 +17,7 @@ final class Job: Mappable {
     var revisionNumber: String!
     var drawNumber: String!
     var partDescription: String!
-    var prodQty: String!
+    var prodQty: Int!
     var dedlineDate: String!
     var detailImage: String!
 

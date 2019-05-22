@@ -21,7 +21,7 @@
 		32EFC03D220C72C8003F175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03B220C72C8003F175B /* Main.storyboard */; };
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
-		B5278D5E225A63C100CDA7E4 /* JobTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5278D5D225A63C100CDA7E4 /* JobTableViewCellModel.swift */; };
+		B5278D5E225A63C100CDA7E4 /* ProductTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5278D5D225A63C100CDA7E4 /* ProductTableViewCellModel.swift */; };
 		B52836F222917A70009D03A8 /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52836F022917A70009D03A8 /* DetailImageTableViewCell.swift */; };
 		B52836F322917A70009D03A8 /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B52836F122917A70009D03A8 /* DetailImageTableViewCell.xib */; };
 		B52836F622917AB3009D03A8 /* DetailImageViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52836F522917AB3009D03A8 /* DetailImageViewCellModel.swift */; };
@@ -45,8 +45,8 @@
 		B53803A3225B98C5000AE4DF /* SF-Pro-Display-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5380391225B98C5000AE4DF /* SF-Pro-Display-BlackItalic.otf */; };
 		B53803A4225B98C5000AE4DF /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5380392225B98C5000AE4DF /* SF-Pro-Display-Light.otf */; };
 		B54548C12259045400205779 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C02259045400205779 /* CellViewModel.swift */; };
-		B54548C7225907D300205779 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C5225907D300205779 /* JobTableViewCell.swift */; };
-		B54548C8225907D300205779 /* JobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54548C6225907D300205779 /* JobTableViewCell.xib */; };
+		B54548C7225907D300205779 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C5225907D300205779 /* ProductTableViewCell.swift */; };
+		B54548C8225907D300205779 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54548C6225907D300205779 /* ProductTableViewCell.xib */; };
 		B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAB2259174F00E21FA4 /* PermissionManager.swift */; };
 		B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */; };
 		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
@@ -75,7 +75,7 @@
 		32EFC041220C72CB003F175B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383C632CF69DD4242D240E76 /* Pods-BoersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.release.xcconfig"; sourceTree = "<group>"; };
-		B5278D5D225A63C100CDA7E4 /* JobTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCellModel.swift; sourceTree = "<group>"; };
+		B5278D5D225A63C100CDA7E4 /* ProductTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCellModel.swift; sourceTree = "<group>"; };
 		B52836F022917A70009D03A8 /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		B52836F122917A70009D03A8 /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
 		B52836F522917AB3009D03A8 /* DetailImageViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewCellModel.swift; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 		B5380391225B98C5000AE4DF /* SF-Pro-Display-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BlackItalic.otf"; sourceTree = "<group>"; };
 		B5380392225B98C5000AE4DF /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		B54548C02259045400205779 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
-		B54548C5225907D300205779 /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
-		B54548C6225907D300205779 /* JobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobTableViewCell.xib; sourceTree = "<group>"; };
+		B54548C5225907D300205779 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		B54548C6225907D300205779 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		B54DED03762260821AA8E982 /* Pods_BoersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B587DEAB2259174F00E21FA4 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = BoersApp/Helpers/PermissionManager.swift; sourceTree = SOURCE_ROOT; };
 		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Extensions/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
@@ -241,9 +241,9 @@
 		B5278D60225A652900CDA7E4 /* JobTable */ = {
 			isa = PBXGroup;
 			children = (
-				B54548C5225907D300205779 /* JobTableViewCell.swift */,
-				B5278D5D225A63C100CDA7E4 /* JobTableViewCellModel.swift */,
-				B54548C6225907D300205779 /* JobTableViewCell.xib */,
+				B54548C5225907D300205779 /* ProductTableViewCell.swift */,
+				B5278D5D225A63C100CDA7E4 /* ProductTableViewCellModel.swift */,
+				B54548C6225907D300205779 /* ProductTableViewCell.xib */,
 			);
 			path = JobTable;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 				32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */,
 				B53803A1225B98C5000AE4DF /* SF-Pro-Display-Thin.otf in Resources */,
 				B5380394225B98C5000AE4DF /* SF-Pro-Display-UltralightItalic.otf in Resources */,
-				B54548C8225907D300205779 /* JobTableViewCell.xib in Resources */,
+				B54548C8225907D300205779 /* ProductTableViewCell.xib in Resources */,
 				B52836F322917A70009D03A8 /* DetailImageTableViewCell.xib in Resources */,
 				B53803A3225B98C5000AE4DF /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				B5380399225B98C5000AE4DF /* SF-Pro-Display-RegularItalic.otf in Resources */,
@@ -521,10 +521,10 @@
 				B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */,
 				3260EE98225C1532003F7A7B /* ApiClient.swift in Sources */,
 				32B44FCB226C7135007B0ABB /* RequestError.swift in Sources */,
-				B54548C7225907D300205779 /* JobTableViewCell.swift in Sources */,
+				B54548C7225907D300205779 /* ProductTableViewCell.swift in Sources */,
 				B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */,
 				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
-				B5278D5E225A63C100CDA7E4 /* JobTableViewCellModel.swift in Sources */,
+				B5278D5E225A63C100CDA7E4 /* ProductTableViewCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
