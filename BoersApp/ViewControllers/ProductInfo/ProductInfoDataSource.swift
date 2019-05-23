@@ -23,7 +23,7 @@ class ProductInfoDataSource {
         case .info: return InfoType.allCases.count
         }
     }
-
+    
     func model(for indexPath: IndexPath) -> CellViewAnyModel? {
         guard let job = job else { return nil }
         switch SectionType.allCases[indexPath.section] {
@@ -35,16 +35,16 @@ class ProductInfoDataSource {
             case .drawNumPartDesc:
                 return ProductInfoViewCellModel(title: job.drawNumber, value: job.partDescription)
             case .job:
-                return ProductInfoViewCellModel(title: info.title, value: job.jobNumber, showDisclosureIndicator: true)
-            case .partNum:
                 let status = job.jobComplete ? "Complete" : "In progress"
-                return ProductInfoViewCellModel(title: info.title, value: job.partNumber, status: status)
+                return ProductInfoViewCellModel(title: info.title, value: job.jobNumber, status: status)
+            case .partNum:
+                return ProductInfoViewCellModel(title: info.title, value: job.partNumber, showDisclosureIndicator: true)
             case .revision:
-                 return ProductInfoViewCellModel(title: info.title, value: job.revisionNumber)
+                return ProductInfoViewCellModel(title: info.title, value: job.revisionNumber)
             case .qty:
-                 return ProductInfoViewCellModel(title: info.title, value: String(job.prodQty))
+                return ProductInfoViewCellModel(title: info.title, value: String(job.prodQty))
             case .deadline:
-                 return ProductInfoViewCellModel(title: info.title, value: job.dedlineDate)
+                return ProductInfoViewCellModel(title: info.title, value: job.dedlineDate)
             }
         }
     }
