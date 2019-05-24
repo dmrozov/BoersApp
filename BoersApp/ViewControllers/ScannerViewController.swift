@@ -12,6 +12,10 @@ import Pulley
 
 final class ScannerViewController: UIViewController {
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private static let captureSession = AVCaptureSession()
 
     @IBOutlet var videoView: UIView!
@@ -98,3 +102,4 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
     }
 }
+

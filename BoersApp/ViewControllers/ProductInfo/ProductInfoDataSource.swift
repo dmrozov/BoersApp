@@ -25,7 +25,7 @@ class ProductInfoDataSource {
     }
     
     func model(for indexPath: IndexPath) -> CellViewAnyModel? {
-        guard let job = job else { return nil }
+        guard let job = job else { return DetailImageTableViewCellModel(job: nil) }
         switch SectionType.allCases[indexPath.section] {
         case .image:
             return DetailImageTableViewCellModel(job: job)
@@ -36,15 +36,15 @@ class ProductInfoDataSource {
                 return ProductInfoViewCellModel(title: job.drawNumber, value: job.partDescription)
             case .job:
                 let status = job.jobComplete ? "Complete" : "In progress"
-                return ProductInfoViewCellModel(title: info.title, value: job.jobNumber, status: status)
+                return ProductInfoViewCellModel(title: "Job", value: job.jobNumber, status: status)
             case .partNum:
-                return ProductInfoViewCellModel(title: info.title, value: job.partNumber, showDisclosureIndicator: true)
+                return ProductInfoViewCellModel(title: "Part", value: job.partNumber, showDisclosureIndicator: true)
             case .revision:
-                return ProductInfoViewCellModel(title: info.title, value: job.revisionNumber)
+                return ProductInfoViewCellModel(title: "Revision", value: job.revisionNumber)
             case .qty:
-                return ProductInfoViewCellModel(title: info.title, value: String(job.prodQty))
+                return ProductInfoViewCellModel(title: "QTY", value: String(job.prodQty))
             case .deadline:
-                return ProductInfoViewCellModel(title: info.title, value: job.dedlineDate)
+                return ProductInfoViewCellModel(title: "Deadline", value: job.dedlineDate)
             }
         }
     }
@@ -55,16 +55,5 @@ class ProductInfoDataSource {
 
     enum InfoType: CaseIterable {
         case job, partNum, drawNumPartDesc, revision, qty, deadline
-
-        var title: String {
-            switch self {
-            case .job: return "Job"
-            case .partNum: return "Part"
-            case .drawNumPartDesc: return ""
-            case .revision: return "Revision"
-            case .qty: return "QTY"
-            case .deadline: return "Deadline"
-            }
-        }
     }
 }

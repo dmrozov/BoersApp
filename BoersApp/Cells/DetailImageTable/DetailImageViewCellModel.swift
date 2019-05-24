@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 
 struct DetailImageTableViewCellModel {
-    let job: Job
+    let job: Job?
 }
 
 extension DetailImageTableViewCellModel: CellViewModel {
     func setup(cell: DetailImageTableViewCell) {
         cell.detailImage.image = #imageLiteral(resourceName: "product_template.png")
+        guard let job = job else { return }
         Alamofire.request(job.detailImage).responseData { result in
             if let data = result.data, let image = UIImage(data: data) {
                 cell.detailImage.image = image

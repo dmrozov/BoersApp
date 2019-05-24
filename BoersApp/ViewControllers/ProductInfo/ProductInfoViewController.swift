@@ -10,7 +10,7 @@ import UIKit
 import Pulley
 // TODO: - вернуть полосочку по дизайну вверху экрана
 class ProductInfoViewController: UIViewController {
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -18,6 +18,7 @@ class ProductInfoViewController: UIViewController {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView! {
         didSet {
+            tableView.scrollIndicatorInsets = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
             tableView.dataSource = self
             tableView.tableFooterView = UIView()
             tableView.registerNibModels(nibModels:
@@ -68,10 +69,10 @@ extension ProductInfoViewController: UITableViewDataSource {
 extension ProductInfoViewController: PulleyDrawerViewControllerDelegate {
 
     func supportedDrawerPositions() -> [PulleyPosition] {
-        return  [.partiallyRevealed, .open]
+        return  [.collapsed, .open]
     }
-
-    func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
+    
+    func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
         return 0
     }
 
