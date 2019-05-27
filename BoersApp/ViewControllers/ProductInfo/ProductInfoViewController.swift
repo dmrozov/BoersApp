@@ -7,13 +7,9 @@
 //
 
 import UIKit
-import Pulley
-// TODO: - вернуть полосочку по дизайну вверху экрана
+import PanModal
+
 class ProductInfoViewController: UIViewController {
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView! {
@@ -25,22 +21,37 @@ class ProductInfoViewController: UIViewController {
                 [ProductInfoViewCellModel.self, DetailImageTableViewCellModel.self])
         }
     }
-
-    let dataSouce = ProductInfoDataSource()
-
-    func getProductInfo(jobNum: String) {
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    private let dataSouce = ProductInfoDataSource()
+    
+    var jobNumer: String!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getProductInfo(jobNum: jobNumer)
+    }
+    
+    //    TODO: - Resolve dismissing problem
+    //    func panModalWillDismiss() {
+    //        ScannerViewController.startRunning()
+    //    }
+    
+    private func getProductInfo(jobNum: String) {
         dataSouce.job = nil
         tableView.reloadData()
         activityIndicator.startAnimating()
         ApiClient.getJobs(jobNum) { (jobs, _) in
             if let jobs = jobs {
                 if jobs.isEmpty {
-                    self.showMessageAlert(title: "Error", message: "No jobs found", buttonTitle: "OK") {
-                        if let container = self.parent as? ContainerViewController {
-                            container.setDrawerPosition(position: .collapsed, animated: true)
-                        }
-                    }
-
+                    self.showMessageAlert(title: "Error", message: "No jobs found", buttonTitle: "OK")
                 }
                 self.dataSouce.job = jobs.first!
                 self.tableView.reloadData()
@@ -66,23 +77,9 @@ extension ProductInfoViewController: UITableViewDataSource {
     }
 }
 
-extension ProductInfoViewController: PulleyDrawerViewControllerDelegate {
-
-    func supportedDrawerPositions() -> [PulleyPosition] {
-        return  [.collapsed, .open]
-    }
+extension ProductInfoViewController: PanModalPresentable {
     
-    func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
-        return 0
-    }
-
-    func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
-        if drawer.drawerPosition == .open {
-            ScannerViewController.stopRunning()
-        } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                ScannerViewController.startRunning()
-            }
-        }
+    var panScrollable: UIScrollView? {
+        return nil
     }
 }

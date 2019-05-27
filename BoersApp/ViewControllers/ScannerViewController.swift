@@ -8,29 +8,27 @@
 
 import UIKit
 import AVFoundation
-import Pulley
+import PanModal
 
 final class ScannerViewController: UIViewController {
 
+    @IBOutlet var videoView: UIView!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     private static let captureSession = AVCaptureSession()
-
-    @IBOutlet var videoView: UIView!
-
+    
     private var video: AVCaptureVideoPreviewLayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         permissionManagerConfigure()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
         if video == nil { return }
         video.frame = videoView.layer.bounds
     }
@@ -50,7 +48,6 @@ final class ScannerViewController: UIViewController {
         ScannerViewController.captureSession.addOutput(output)
         output.metadataObjectTypes = [.qr]
         output.setMetadataObjectsDelegate(self, queue: .main)
-
         video = AVCaptureVideoPreviewLayer(session: ScannerViewController.captureSession)
         video.videoGravity = .resizeAspectFill
         videoView.layer.addSublayer(video)
@@ -83,18 +80,19 @@ final class ScannerViewController: UIViewController {
 // MARK: - AVCaptureMetadataOutputObjectsDelegate
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
-
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput,
                         didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if let object = metadataObjects.first as? AVMetadataMachineReadableCodeObject, object.type == .qr {
-
-            if let container = parent as? ContainerViewController,
-                let productInfoVC = container.drawerContentViewController as? ProductInfoViewController,
-                let stringURL = object.stringValue {
-
+            if let stringURL = object.stringValue {
                 if let number = ScannerDataProcessor.extractID(from: stringURL) {
-                    productInfoVC.getProductInfo(jobNum: number)
-                    pulleyViewController!.setDrawerPosition(position: .open, animated: true)
+                    ScannerViewController.stopRunning()
+                    if let productInfoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductInfoVC") as? ProductInfoViewController {
+                        let navigationController = NavigationController()
+                        navigationController.rootVC = productInfoVC
+                        productInfoVC.jobNumer = number
+                        presentPanModal(navigationController, sourceView: nil, sourceRect: view.bounds)
+                    }
                 } else {
                     showMessageAlert(title: "Error", message: "Wrong QR code", buttonTitle: "OK")
                 }
@@ -102,4 +100,3 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
     }
 }
-

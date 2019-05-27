@@ -26,15 +26,14 @@ extension ProductInfoViewCellModel: CellViewModel {
     func setup(cell: ProductTableViewCell) {
         cell.titleLabel.text = title
         cell.valueLabel.text = value
-        
-        //TODO: - Не безопасно
-        cell.statusLabel.text = status
-        if cell.statusLabel.text == "Complete" {
-            cell.statusLabel.textColor = #colorLiteral(red: 0.3019607843, green: 0.5803921569, blue: 0, alpha: 1)
-        } else {
-            cell.statusLabel.textColor = #colorLiteral(red: 0.8, green: 0, blue: 0, alpha: 1)
+        if cell.statusLabel != nil, status != nil {
+            cell.statusLabel.text = status
+            if cell.statusLabel.text == "Complete" {
+                cell.statusLabel.textColor = #colorLiteral(red: 0.3019607843, green: 0.5803921569, blue: 0, alpha: 1)
+            } else {
+                cell.statusLabel.textColor = #colorLiteral(red: 0.8, green: 0, blue: 0, alpha: 1)
+            }
         }
-        
         if showDisclosureIndicator {
             cell.accessoryType = .disclosureIndicator
         }
