@@ -12,6 +12,9 @@ class ProductTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
-    @IBOutlet var statusLabel: UILabel!
-
+    @IBOutlet var statusLabel: UILabel! {
+        didSet {
+            statusLabel.text = ""
+        }
+    }
 }

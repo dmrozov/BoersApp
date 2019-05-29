@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CpE-qp-huk">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hXh-7V-3g7">
                                 <rect key="frame" x="159" y="299.5" width="57" height="68"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-Id-JUs">
@@ -37,8 +37,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CpE-qp-huk" firstAttribute="centerX" secondItem="VaO-Ox-RtO" secondAttribute="centerX" id="K5O-W2-RdR"/>
-                            <constraint firstItem="CpE-qp-huk" firstAttribute="centerY" secondItem="VaO-Ox-RtO" secondAttribute="centerY" id="Lu1-Qg-v4o"/>
+                            <constraint firstItem="hXh-7V-3g7" firstAttribute="centerY" secondItem="VaO-Ox-RtO" secondAttribute="centerY" id="3v6-HM-vgP"/>
+                            <constraint firstItem="hXh-7V-3g7" firstAttribute="centerX" secondItem="VaO-Ox-RtO" secondAttribute="centerX" id="umA-1j-OGx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LdK-nb-xqy"/>
                     </view>
@@ -110,6 +110,7 @@
         <!--Product Info View Controller-->
         <scene sceneID="2Ub-3L-Okt">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgj-eh-dlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ProductInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k6p-xh-Flv" customClass="ProductInfoViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cbV-wk-AkZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -119,6 +120,10 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="15" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="k6p-xh-Flv" id="HkF-7U-FZB"/>
+                                    <outlet property="delegate" destination="k6p-xh-Flv" id="9ZI-vd-vvb"/>
+                                </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jIe-0f-GTT">
                                 <rect key="frame" x="177.5" y="603" width="20" height="20"/>
@@ -142,9 +147,50 @@
                         <outlet property="tableView" destination="dhU-at-6bQ" id="d5O-NG-RiP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zgj-eh-dlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1656.8" y="-124.58770614692655"/>
+        </scene>
+        <!--Part Info View Controller-->
+        <scene sceneID="vpF-Jz-JH5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ci-9d-hlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="ProductInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WO6-1Q-c8Y" customClass="PartInfoViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6sI-od-2Yb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-B2-kPj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="15" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WO6-1Q-c8Y" id="rzZ-hc-ZZu"/>
+                                    <outlet property="delegate" destination="WO6-1Q-c8Y" id="fmF-b4-vSD"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ICZ-2i-c0E">
+                                <rect key="frame" x="177.5" y="603" width="20" height="20"/>
+                                <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iOh-B2-kPj" firstAttribute="bottom" secondItem="qMA-jJ-M0A" secondAttribute="bottom" id="Tgb-qw-ffq"/>
+                            <constraint firstItem="iOh-B2-kPj" firstAttribute="leading" secondItem="6sI-od-2Yb" secondAttribute="leading" id="YHk-LK-JGp"/>
+                            <constraint firstItem="qMA-jJ-M0A" firstAttribute="trailing" secondItem="iOh-B2-kPj" secondAttribute="trailing" id="a6s-ki-0hb"/>
+                            <constraint firstItem="qMA-jJ-M0A" firstAttribute="bottom" secondItem="ICZ-2i-c0E" secondAttribute="bottom" constant="44" id="bCk-wT-0Nj"/>
+                            <constraint firstItem="iOh-B2-kPj" firstAttribute="top" secondItem="qMA-jJ-M0A" secondAttribute="top" id="ihI-Gp-KHx"/>
+                            <constraint firstItem="ICZ-2i-c0E" firstAttribute="centerX" secondItem="6sI-od-2Yb" secondAttribute="centerX" id="l6b-zT-4Sa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qMA-jJ-M0A"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uZN-vY-MoU"/>
+                    <connections>
+                        <outlet property="tableView" destination="iOh-B2-kPj" id="vfS-cz-k2G"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2532" y="-124"/>
         </scene>
     </scenes>
 </document>

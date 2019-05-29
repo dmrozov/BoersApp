@@ -9,17 +9,15 @@
 import UIKit
 import PanModal
 
-class NavigationController: UINavigationController, PanModalPresentable {
+class NavigationController: UINavigationController {
     
-    var rootVC: UIViewController!
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    private var rootViewController: UIViewController!
+    private var willDismissCallback: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pushViewController(rootVC, animated: false)
+
+        pushViewController(rootViewController, animated: false)
     }
     
     override func popViewController(animated: Bool) -> UIViewController? {
@@ -27,14 +25,20 @@ class NavigationController: UINavigationController, PanModalPresentable {
         panModalSetNeedsLayoutUpdate()
         return viewController
     }
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        super.pushViewController(viewController, animated: animated)
-        panModalSetNeedsLayoutUpdate()
+
+    static func with(_ rootViewController: UIViewController,
+                     willDismissCallback: (() -> Void)? = nil) -> NavigationController {
+        let navigationController = NavigationController()
+        navigationController.rootViewController = rootViewController
+        navigationController.willDismissCallback = willDismissCallback
+        return navigationController
     }
-    
-    // MARK: - Pan Modal Presentable
-    
+}
+
+// MARK: - PanModalPresentable
+
+extension NavigationController: PanModalPresentable {
+
     var panScrollable: UIScrollView? {
         return (topViewController as? PanModalPresentable)?.panScrollable
     }
@@ -45,5 +49,9 @@ class NavigationController: UINavigationController, PanModalPresentable {
     
     var shortFormHeight: PanModalHeight {
         return longFormHeight
+    }
+
+    func panModalWillDismiss() {
+        willDismissCallback?()
     }
 }

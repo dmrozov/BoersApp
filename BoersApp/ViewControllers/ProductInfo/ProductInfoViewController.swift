@@ -9,40 +9,44 @@
 import UIKit
 import PanModal
 
-class ProductInfoViewController: UIViewController {
+class ProductInfoViewController: PanModalPresentbleViewController {
 
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView! {
         didSet {
-            tableView.scrollIndicatorInsets = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
-            tableView.dataSource = self
             tableView.tableFooterView = UIView()
             tableView.registerNibModels(nibModels:
                 [ProductInfoViewCellModel.self, DetailImageTableViewCellModel.self])
+            getProductInfo(jobNum: jobNumer)
         }
     }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+
     private let dataSouce = ProductInfoDataSource()
     
     var jobNumer: String!
-    
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    override var panScrollable: UIScrollView? {
+        return tableView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.tableFooterView = UIView()
+        tableView.registerNibModels(nibModels:
+            [ProductInfoViewCellModel.self, DetailImageTableViewCellModel.self])
         getProductInfo(jobNum: jobNumer)
     }
 
-    //    TODO: - Resolve dismissing problem
-    //    func panModalWillDismiss() {
-    //        ScannerViewController.startRunning()
-    //    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     private func getProductInfo(jobNum: String) {
         dataSouce.job = nil
@@ -55,15 +59,18 @@ class ProductInfoViewController: UIViewController {
                 }
                 self.dataSouce.job = jobs.first!
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+                self.panModalSetNeedsLayoutUpdate()
             }
-            self.activityIndicator.stopAnimating()
         }
     }
 }
 
+// MARK: - TableView DataSourcce
+
 extension ProductInfoViewController: UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSouce.numberOfRows(in: section)
     }
 
@@ -71,15 +78,8 @@ extension ProductInfoViewController: UITableViewDataSource {
         return dataSouce.numberOfSections
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let model = dataSouce.model(for: indexPath) else { return UITableViewCell() }
         return tableView.dequeueReusableCell(withModel: model, for: indexPath)
-    }
-}
-
-extension ProductInfoViewController: PanModalPresentable {
-
-    var panScrollable: UIScrollView? {
-        return nil
     }
 }
