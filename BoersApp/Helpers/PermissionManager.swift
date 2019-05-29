@@ -25,6 +25,7 @@ import UserNotifications
  
  */
 
+// TODO: - Удалить лишние permission types
 enum PermissionsType: String {
     case notifications, calendar, reminders, camera, photosLibrary
 }

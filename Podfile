@@ -7,7 +7,7 @@ target 'BoersApp' do
 
   # Pods for BoersApp
    pod 'SwiftLint'
-   pod 'Pulley'
+   pod 'PanModal'
    pod 'Alamofire', '~> 4.7'
    pod 'AlamofireObjectMapper'
 end

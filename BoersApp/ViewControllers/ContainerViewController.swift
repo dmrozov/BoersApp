@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Pulley
 
-class ContainerViewController: PulleyViewController {
+class ContainerViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

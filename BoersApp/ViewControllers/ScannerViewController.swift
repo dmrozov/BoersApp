@@ -8,27 +8,40 @@
 
 import UIKit
 import AVFoundation
-import Pulley
+import PanModal
 
 final class ScannerViewController: UIViewController {
 
-    private static let captureSession = AVCaptureSession()
-
     @IBOutlet var videoView: UIView!
 
+    private let captureSession = AVCaptureSession()
     private var video: AVCaptureVideoPreviewLayer!
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         permissionManagerConfigure()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
         if video == nil { return }
         video.frame = videoView.layer.bounds
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        captureSession.startRunning()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        captureSession.stopRunning()
     }
 
     // MARK: - Private funcs
@@ -38,20 +51,19 @@ final class ScannerViewController: UIViewController {
 
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice!)
-            ScannerViewController.captureSession.addInput(input)
+            captureSession.addInput(input)
         } catch {
             print(error)
         }
         let output = AVCaptureMetadataOutput()
-        ScannerViewController.captureSession.addOutput(output)
+        captureSession.addOutput(output)
         output.metadataObjectTypes = [.qr]
         output.setMetadataObjectsDelegate(self, queue: .main)
-
-        video = AVCaptureVideoPreviewLayer(session: ScannerViewController.captureSession)
+        video = AVCaptureVideoPreviewLayer(session: captureSession)
         video.videoGravity = .resizeAspectFill
         videoView.layer.addSublayer(video)
         view.sendSubviewToBack(videoView)
-        ScannerViewController.captureSession.startRunning()
+        captureSession.startRunning()
     }
 
     private func permissionManagerConfigure() {
@@ -66,31 +78,29 @@ final class ScannerViewController: UIViewController {
             }
         }
     }
-
-    static func startRunning() {
-        ScannerViewController.captureSession.startRunning()
-    }
-
-    static func stopRunning() {
-        ScannerViewController.captureSession.stopRunning()
-    }
 }
 
 // MARK: - AVCaptureMetadataOutputObjectsDelegate
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
-
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput,
                         didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if let object = metadataObjects.first as? AVMetadataMachineReadableCodeObject, object.type == .qr {
-
-            if let container = parent as? ContainerViewController,
-                let productInfoVC = container.drawerContentViewController as? ProductInfoViewController,
-                let stringURL = object.stringValue {
-
+            if let stringURL = object.stringValue {
                 if let number = ScannerDataProcessor.extractID(from: stringURL) {
-                    productInfoVC.getProductInfo(jobNum: number)
-                    pulleyViewController!.setDrawerPosition(position: .open, animated: true)
+                    captureSession.stopRunning()
+                    // TODO: - Сделать крассивый экстеншен с энамами для сторибордов и их контроллеров
+                    if let productInfoVC = UIStoryboard(name: "Main", bundle: nil)
+                        .instantiateViewController(withIdentifier: "ProductInfoVC") as? ProductInfoViewController {
+                        let navigationController = NavigationController.with(productInfoVC) { [weak self] in
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                                self?.captureSession.startRunning()
+                            })
+                        }
+                        productInfoVC.jobNumer = number
+                        presentPanModal(navigationController)
+                    }
                 } else {
                     showMessageAlert(title: "Error", message: "Wrong QR code", buttonTitle: "OK")
                 }
