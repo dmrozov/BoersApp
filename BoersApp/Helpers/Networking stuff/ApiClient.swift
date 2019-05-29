@@ -23,14 +23,29 @@ struct ApiClient {
     // MARK: - Public funcs
 
     @discardableResult
-    static func requestVoid(_ path: String, serverUrl: String = serverUrl,
-                            method: HTTPMethod = .get, queryParameters: ConvertibleParameters? = nil, keyPath: String? = nil, bodyParameters: Parameters? = nil,
-                            saveCallbackEnabled: Bool = true, completion: @escaping RequestBlock) -> DataRequest {
-        return makeRequest(path, serverUrl: serverUrl, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters).responseData(completionHandler: { (response) in
+    static func requestVoid(_ path: String,
+                            serverUrl: String = serverUrl,
+                            method: HTTPMethod = .get,
+                            queryParameters: ConvertibleParameters? = nil,
+                            keyPath: String? = nil,
+                            bodyParameters: Parameters? = nil,
+                            saveCallbackEnabled: Bool = true,
+                            completion: @escaping RequestBlock) -> DataRequest {
+        return makeRequest(path,
+                           serverUrl: serverUrl,
+                           method: method,
+                           queryParameters: queryParameters,
+                           bodyParameters: bodyParameters).responseData(completionHandler: { (response) in
             completion(response.requestError)
             if response.requestError == .network, saveCallbackEnabled {
                 savedCallback = {
-                    ApiClient.requestVoid(path, serverUrl: serverUrl, method: method, queryParameters: queryParameters, keyPath: keyPath, bodyParameters: bodyParameters, completion: completion)
+                    ApiClient.requestVoid(path,
+                                          serverUrl: serverUrl,
+                                          method: method,
+                                          queryParameters: queryParameters,
+                                          keyPath: keyPath,
+                                          bodyParameters: bodyParameters,
+                                          completion: completion)
                 }
             } else {
                 savedCallback = nil
@@ -52,15 +67,31 @@ struct ApiClient {
     }
 
     @discardableResult
-    static func requestArray<T: Mappable>(_ path: String, serverUrl: String = serverUrl, method: HTTPMethod = .get,
-                                          queryParameters: ConvertibleParameters? = nil, keyPath: String? = nil, bodyParameters: Parameters? = nil,
-                                          saveCallbackEnabled: Bool = true, completion: @escaping ResultBlock<[T]>) -> DataRequest {
-        return makeRequest(path, serverUrl: serverUrl, method: method,
-                           queryParameters: queryParameters, bodyParameters: bodyParameters).responseArray(keyPath: keyPath) { (response: DataResponse<[T]>) in
+    static func requestArray<T: Mappable>(_ path: String,
+                                          serverUrl: String = serverUrl,
+                                          method: HTTPMethod = .get,
+                                          queryParameters: ConvertibleParameters? = nil,
+                                          keyPath: String? = nil,
+                                          bodyParameters: Parameters? = nil,
+                                          saveCallbackEnabled: Bool = true,
+                                          completion: @escaping ResultBlock<[T]>) -> DataRequest {
+        return makeRequest(path,
+                           serverUrl: serverUrl,
+                           method: method,
+                           queryParameters: queryParameters,
+                           bodyParameters: bodyParameters)
+            .responseArray(keyPath: keyPath) { (response: DataResponse<[T]>) in
+
             completion(response.value, response.requestError)
             if response.requestError == .network, saveCallbackEnabled {
                 savedCallback = {
-                    ApiClient.requestArray(path, serverUrl: serverUrl, method: method, queryParameters: queryParameters, keyPath: keyPath, bodyParameters: bodyParameters, completion: completion)
+                    ApiClient.requestArray(path,
+                                           serverUrl: serverUrl,
+                                           method: method,
+                                           queryParameters: queryParameters,
+                                           keyPath: keyPath,
+                                           bodyParameters: bodyParameters,
+                                           completion: completion)
                 }
             } else {
                 savedCallback = nil
@@ -69,13 +100,31 @@ struct ApiClient {
     }
 
     @discardableResult
-    static func requestObject<T: Mappable>(_ path: String, serverUrl: String = serverUrl, method: HTTPMethod = .get, queryParameters: ConvertibleParameters? = nil,
-                                           keyPath: String? = nil, bodyParameters: Parameters? = nil, saveCallbackEnabled: Bool = true, completion: @escaping ResultBlock<T>) -> DataRequest {
-        return makeRequest(path, serverUrl: serverUrl, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters).responseObject { (response: DataResponse<T>) in
+    static func requestObject<T: Mappable>(_ path: String,
+                                           serverUrl: String = serverUrl,
+                                           method: HTTPMethod = .get,
+                                           queryParameters: ConvertibleParameters? = nil,
+                                           keyPath: String? = nil,
+                                           bodyParameters: Parameters? = nil,
+                                           saveCallbackEnabled: Bool = true,
+                                           completion: @escaping ResultBlock<T>) -> DataRequest {
+        return makeRequest(path,
+                           serverUrl: serverUrl,
+                           method: method,
+                           queryParameters: queryParameters,
+                           bodyParameters: bodyParameters).responseObject { (response: DataResponse<T>) in
+
             completion(response.value, response.requestError)
+
             if response.requestError == .network, saveCallbackEnabled {
                 savedCallback = {
-                    ApiClient.requestObject(path, serverUrl: serverUrl, method: method, queryParameters: queryParameters, keyPath: keyPath, bodyParameters: bodyParameters, completion: completion)
+                    ApiClient.requestObject(path,
+                                            serverUrl: serverUrl,
+                                            method: method,
+                                            queryParameters: queryParameters,
+                                            keyPath: keyPath,
+                                            bodyParameters: bodyParameters,
+                                            completion: completion)
                 }
             } else {
                 savedCallback = nil
@@ -84,8 +133,11 @@ struct ApiClient {
 }
     // MARK: - Private funcs
 
-    private static func makeRequest(_ path: String, serverUrl: String = serverUrl, method: HTTPMethod = .get,
-                                    queryParameters: ConvertibleParameters? = nil, bodyParameters: Parameters? = nil) -> DataRequest {
+    private static func makeRequest(_ path: String,
+                                    serverUrl: String = serverUrl,
+                                    method: HTTPMethod = .get,
+                                    queryParameters: ConvertibleParameters? = nil,
+                                    bodyParameters: Parameters? = nil) -> DataRequest {
         var fullParameters = ConvertibleParameters()
         if let parameters = queryParameters {
             for (key, value) in parameters {
@@ -93,9 +145,12 @@ struct ApiClient {
             }
         }
         let fullUrl = serverUrl + path + parametersString(from: fullParameters)
-
-        let authHeaders = ["Content-Type" : "application/json"]
-        return Alamofire.request(fullUrl, method: method, parameters: bodyParameters, encoding: JSONEncoding.default, headers: authHeaders)
+        let authHeaders = ["Content-Type": "application/json"]
+        return Alamofire.request(fullUrl,
+                                 method: method,
+                                 parameters: bodyParameters,
+                                 encoding: JSONEncoding.default,
+                                 headers: authHeaders)
     }
 
     private static func parametersString(from dict: ConvertibleParameters) -> String {

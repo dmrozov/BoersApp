@@ -7,52 +7,70 @@
 //
 
 import UIKit
-import Pulley
-// TODO: - вернуть полосочку по дизайну вверху экрана
-class ProductInfoViewController: UIViewController {
+import PanModal
+
+class ProductInfoViewController: PanModalPresentbleViewController {
+
+    @IBOutlet var tableView: UITableView! {
+        didSet {
+            tableView.tableFooterView = UIView()
+            tableView.registerNibModels(nibModels:
+                [ProductInfoViewCellModel.self, DetailImageTableViewCellModel.self])
+            getProductInfo(jobNum: jobNumer)
+        }
+    }
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+
+    private let dataSouce = ProductInfoDataSource()
     
+    var jobNumer: String!
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet var tableView: UITableView! {
-        didSet {
-            tableView.scrollIndicatorInsets = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
-            tableView.dataSource = self
-            tableView.tableFooterView = UIView()
-            tableView.registerNibModels(nibModels:
-                [ProductInfoViewCellModel.self, DetailImageTableViewCellModel.self])
-        }
+    override var panScrollable: UIScrollView? {
+        return tableView
     }
 
-    let dataSouce = ProductInfoDataSource()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    func getProductInfo(jobNum: String) {
+        tableView.tableFooterView = UIView()
+        tableView.registerNibModels(nibModels:
+            [ProductInfoViewCellModel.self, DetailImageTableViewCellModel.self])
+        getProductInfo(jobNum: jobNumer)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    private func getProductInfo(jobNum: String) {
         dataSouce.job = nil
         tableView.reloadData()
         activityIndicator.startAnimating()
         ApiClient.getJobs(jobNum) { (jobs, _) in
             if let jobs = jobs {
                 if jobs.isEmpty {
-                    self.showMessageAlert(title: "Error", message: "No jobs found", buttonTitle: "OK") {
-                        if let container = self.parent as? ContainerViewController {
-                            container.setDrawerPosition(position: .collapsed, animated: true)
-                        }
-                    }
-
+                    self.showMessageAlert(title: "Error", message: "No jobs found", buttonTitle: "OK")
                 }
                 self.dataSouce.job = jobs.first!
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+                self.panModalSetNeedsLayoutUpdate()
             }
-            self.activityIndicator.stopAnimating()
         }
     }
 }
 
+// MARK: - TableView DataSourcce
+
 extension ProductInfoViewController: UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSouce.numberOfRows(in: section)
     }
 
@@ -60,29 +78,8 @@ extension ProductInfoViewController: UITableViewDataSource {
         return dataSouce.numberOfSections
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let model = dataSouce.model(for: indexPath) else { return UITableViewCell() }
         return tableView.dequeueReusableCell(withModel: model, for: indexPath)
-    }
-}
-
-extension ProductInfoViewController: PulleyDrawerViewControllerDelegate {
-
-    func supportedDrawerPositions() -> [PulleyPosition] {
-        return  [.collapsed, .open]
-    }
-    
-    func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
-        return 0
-    }
-
-    func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
-        if drawer.drawerPosition == .open {
-            ScannerViewController.stopRunning()
-        } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                ScannerViewController.startRunning()
-            }
-        }
     }
 }

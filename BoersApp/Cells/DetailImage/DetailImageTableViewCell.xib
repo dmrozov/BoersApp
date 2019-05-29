@@ -20,10 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product_template" translatesAutoresizingMaskIntoConstraints="NO" id="Vd5-Cj-OPb">
-                        <rect key="frame" x="16" y="19" width="343" height="343"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Vd5-Cj-OPb" secondAttribute="height" multiplier="1:1" id="Dv0-rX-MNI"/>
-                        </constraints>
+                        <rect key="frame" x="16" y="19" width="347" height="346"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="15"/>

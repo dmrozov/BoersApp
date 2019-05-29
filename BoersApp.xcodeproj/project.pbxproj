@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3260EE95225C0058003F7A7B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EE94225C0058003F7A7B /* ContainerViewController.swift */; };
 		3260EE98225C1532003F7A7B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EE97225C1532003F7A7B /* ApiClient.swift */; };
 		3264BB2222665F26009363AA /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264BB2122665F26009363AA /* URL+Parameters.swift */; };
 		32686B43228D8745001CEAF6 /* ScannerDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC44228D85C5004F9134 /* ScannerDataProcessor.swift */; };
 		32A5C598229362DE00D3FDBD /* ProductInfoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5C597229362DE00D3FDBD /* ProductInfoDataSource.swift */; };
+		32A5C59D229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5C59C229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift */; };
+		32A5C59F229ED8A800D3FDBD /* PartInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5C59E229ED8A800D3FDBD /* PartInfoViewController.swift */; };
 		32B44FC8226C708E007B0ABB /* ParameterConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B44FC7226C708E007B0ABB /* ParameterConvertible.swift */; };
 		32B44FCB226C7135007B0ABB /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B44FCA226C7135007B0ABB /* RequestError.swift */; };
 		32B44FCD226D0C85007B0ABB /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B44FCC226D0C85007B0ABB /* ApiRequests.swift */; };
@@ -21,6 +22,7 @@
 		32EFC03D220C72C8003F175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03B220C72C8003F175B /* Main.storyboard */; };
 		32EFC03F220C72CB003F175B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC03E220C72CB003F175B /* Assets.xcassets */; };
 		32EFC042220C72CB003F175B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EFC040220C72CB003F175B /* LaunchScreen.storyboard */; };
+		B51F7CFD229AAB3100B47409 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F7CFC229AAB3100B47409 /* NavigationController.swift */; };
 		B5278D5E225A63C100CDA7E4 /* ProductTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5278D5D225A63C100CDA7E4 /* ProductTableViewCellModel.swift */; };
 		B52836F222917A70009D03A8 /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52836F022917A70009D03A8 /* DetailImageTableViewCell.swift */; };
 		B52836F322917A70009D03A8 /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B52836F122917A70009D03A8 /* DetailImageTableViewCell.xib */; };
@@ -59,10 +61,11 @@
 
 /* Begin PBXFileReference section */
 		3260EC44228D85C5004F9134 /* ScannerDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerDataProcessor.swift; sourceTree = "<group>"; };
-		3260EE94225C0058003F7A7B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		3260EE97225C1532003F7A7B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		3264BB2122665F26009363AA /* URL+Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
 		32A5C597229362DE00D3FDBD /* ProductInfoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDataSource.swift; sourceTree = "<group>"; };
+		32A5C59C229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalPresentbleViewController.swift; sourceTree = "<group>"; };
+		32A5C59E229ED8A800D3FDBD /* PartInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PartInfoViewController.swift; path = ../PartInfoViewController.swift; sourceTree = "<group>"; };
 		32B44FC7226C708E007B0ABB /* ParameterConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterConvertible.swift; sourceTree = "<group>"; };
 		32B44FCA226C7135007B0ABB /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		32B44FCC226D0C85007B0ABB /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		32EFC041220C72CB003F175B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32EFC043220C72CB003F175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383C632CF69DD4242D240E76 /* Pods-BoersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp.release.xcconfig"; sourceTree = "<group>"; };
+		B51F7CFC229AAB3100B47409 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		B5278D5D225A63C100CDA7E4 /* ProductTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCellModel.swift; sourceTree = "<group>"; };
 		B52836F022917A70009D03A8 /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		B52836F122917A70009D03A8 /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -153,6 +157,14 @@
 			path = ProductInfo;
 			sourceTree = "<group>";
 		};
+		32A5C5A0229EDA1200D3FDBD /* PartInfo */ = {
+			isa = PBXGroup;
+			children = (
+				32A5C59E229ED8A800D3FDBD /* PartInfoViewController.swift */,
+			);
+			path = PartInfo;
+			sourceTree = "<group>";
+		};
 		32B44FC9226C7106007B0ABB /* Networking stuff */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,10 +198,12 @@
 		32E9163A223CE1FF00C22561 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				32A5C596229362CE00D3FDBD /* ProductInfo */,
+				32A5C5A0229EDA1200D3FDBD /* PartInfo */,
 				B5EDF8DF225134330084BC63 /* AuthViewController.swift */,
 				32EFC039220C72C8003F175B /* ScannerViewController.swift */,
-				32A5C596229362CE00D3FDBD /* ProductInfo */,
-				3260EE94225C0058003F7A7B /* ContainerViewController.swift */,
+				B51F7CFC229AAB3100B47409 /* NavigationController.swift */,
+				32A5C59C229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,24 +252,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B5278D60225A652900CDA7E4 /* JobTable */ = {
+		B5278D60225A652900CDA7E4 /* Product */ = {
 			isa = PBXGroup;
 			children = (
 				B54548C5225907D300205779 /* ProductTableViewCell.swift */,
 				B5278D5D225A63C100CDA7E4 /* ProductTableViewCellModel.swift */,
 				B54548C6225907D300205779 /* ProductTableViewCell.xib */,
 			);
-			path = JobTable;
+			path = Product;
 			sourceTree = "<group>";
 		};
-		B52836F422917A93009D03A8 /* DetailImageTable */ = {
+		B52836F422917A93009D03A8 /* DetailImage */ = {
 			isa = PBXGroup;
 			children = (
 				B52836F022917A70009D03A8 /* DetailImageTableViewCell.swift */,
 				B52836F522917AB3009D03A8 /* DetailImageViewCellModel.swift */,
 				B52836F122917A70009D03A8 /* DetailImageTableViewCell.xib */,
 			);
-			path = DetailImageTable;
+			path = DetailImage;
 			sourceTree = "<group>";
 		};
 		B5380380225B9877000AE4DF /* Fonts */ = {
@@ -313,8 +327,8 @@
 		B54548C9225907E100205779 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B52836F422917A93009D03A8 /* DetailImageTable */,
-				B5278D60225A652900CDA7E4 /* JobTable */,
+				B52836F422917A93009D03A8 /* DetailImage */,
+				B5278D60225A652900CDA7E4 /* Product */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -479,7 +493,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
+				"${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -488,7 +502,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PanModal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -503,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52836F222917A70009D03A8 /* DetailImageTableViewCell.swift in Sources */,
+				B51F7CFD229AAB3100B47409 /* NavigationController.swift in Sources */,
 				32686B43228D8745001CEAF6 /* ScannerDataProcessor.swift in Sources */,
 				B538037F225B8B59000AE4DF /* UIFont+SFProFont.swift in Sources */,
 				32B44FC8226C708E007B0ABB /* ParameterConvertible.swift in Sources */,
@@ -518,12 +533,13 @@
 				B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */,
 				32A5C598229362DE00D3FDBD /* ProductInfoDataSource.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
-				3260EE95225C0058003F7A7B /* ContainerViewController.swift in Sources */,
 				B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */,
 				3260EE98225C1532003F7A7B /* ApiClient.swift in Sources */,
+				32A5C59D229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift in Sources */,
 				32B44FCB226C7135007B0ABB /* RequestError.swift in Sources */,
 				B54548C7225907D300205779 /* ProductTableViewCell.swift in Sources */,
 				B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */,
+				32A5C59F229ED8A800D3FDBD /* PartInfoViewController.swift in Sources */,
 				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
 				B5278D5E225A63C100CDA7E4 /* ProductTableViewCellModel.swift in Sources */,
 			);
@@ -673,7 +689,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BoersApp/Resources/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,7 +700,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.SPBSTU.BoersApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -692,7 +711,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BoersApp/Resources/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -700,7 +722,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.SPBSTU.BoersApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
