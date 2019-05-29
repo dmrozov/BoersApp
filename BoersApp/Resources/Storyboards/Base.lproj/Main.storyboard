@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6w6-3O-gfX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6w6-3O-gfX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,7 +110,6 @@
         <!--Product Info View Controller-->
         <scene sceneID="2Ub-3L-Okt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zgj-eh-dlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ProductInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k6p-xh-Flv" customClass="ProductInfoViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cbV-wk-AkZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -147,14 +146,14 @@
                         <outlet property="tableView" destination="dhU-at-6bQ" id="d5O-NG-RiP"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgj-eh-dlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1656.8" y="-124.58770614692655"/>
         </scene>
         <!--Part Info View Controller-->
         <scene sceneID="vpF-Jz-JH5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ci-9d-hlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="ProductInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WO6-1Q-c8Y" customClass="PartInfoViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="WO6-1Q-c8Y" customClass="PartInfoViewController" customModule="BoersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6sI-od-2Yb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +188,7 @@
                         <outlet property="tableView" destination="iOh-B2-kPj" id="vfS-cz-k2G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ci-9d-hlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2532" y="-124"/>
         </scene>
