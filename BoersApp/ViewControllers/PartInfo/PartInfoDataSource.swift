@@ -13,21 +13,21 @@ class PartInfoDataSource {
     var part: Part?
     
     var numberOfSections: Int {
-        if part == nil { return 1 }
         return SectionType.allCases.count
     }
     
     func numberOfRows(in section: Int) -> Int {
+        if part == nil { return 0 }
         switch SectionType.allCases[section] {
-        case .info: return InfoType.allCases.count
+        case .info: return RowType.allCases.count
         }
     }
     
     func model(for indexPath: IndexPath) -> CellViewAnyModel? {
-        guard let part = part else { return DetailImageTableViewCellModel(job: nil) }
+        guard let part = part else { return nil }
         switch SectionType.allCases[indexPath.section] {
         case .info:
-            let info = InfoType.allCases[indexPath.row]
+            let info = RowType.allCases[indexPath.row]
             switch info {
             case .part:
                 return ProductInfoViewCellModel(title: "Part", value: part.partNumber)
@@ -45,7 +45,7 @@ class PartInfoDataSource {
         case info
     }
     
-    enum InfoType: CaseIterable {
+    enum RowType: CaseIterable {
         case part, partDesciption, lRev, type
     }
 }

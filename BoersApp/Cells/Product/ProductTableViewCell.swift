@@ -12,9 +12,15 @@ class ProductTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
-    @IBOutlet var statusLabel: UILabel! {
-        didSet {
-            statusLabel.text = ""
-        }
+    @IBOutlet var statusLabel: UILabel!
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        titleLabel.text = nil
+        valueLabel.text = nil
+        statusLabel.text = nil
+        selectionStyle = .none
+        accessoryType = .none
     }
 }

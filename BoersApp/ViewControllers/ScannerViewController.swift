@@ -98,7 +98,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                                 self?.captureSession.startRunning()
                             })
                         }
-                        productInfoVC.jobNumer = number
+                        productInfoVC.jobNumber = number
                         presentPanModal(navigationController)
                     }
                 } else {

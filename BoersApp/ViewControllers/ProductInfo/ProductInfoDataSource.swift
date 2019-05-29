@@ -20,7 +20,7 @@ class ProductInfoDataSource {
     func numberOfRows(in section: Int) -> Int {
         switch SectionType.allCases[section] {
         case .image: return 1
-        case .info: return InfoType.allCases.count
+        case .info: return RowType.allCases.count
         }
     }
     
@@ -30,7 +30,7 @@ class ProductInfoDataSource {
         case .image:
             return DetailImageTableViewCellModel(job: job)
         case .info:
-            let info = InfoType.allCases[indexPath.row]
+            let info = RowType.allCases[indexPath.row]
             switch info {
             case .drawNumPartDesc:
                 return ProductInfoViewCellModel(title: job.drawNumber, value: job.partDescription)
@@ -49,11 +49,15 @@ class ProductInfoDataSource {
         }
     }
 
+    func typesForRow(at indexPath: IndexPath) -> (section: SectionType, row: RowType) {
+        return (SectionType.allCases[indexPath.section], RowType.allCases[indexPath.row])
+    }
+
     enum SectionType: CaseIterable {
         case image, info
     }
 
-    enum InfoType: CaseIterable {
+    enum RowType: CaseIterable {
         case job, partNum, drawNumPartDesc, revision, qty, deadline
     }
 }

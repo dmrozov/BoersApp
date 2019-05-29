@@ -13,10 +13,15 @@ class NavigationController: UINavigationController {
     
     private var rootViewController: UIViewController!
     private var willDismissCallback: (() -> Void)?
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavigationBarAppearence()
         pushViewController(rootViewController, animated: false)
     }
     
@@ -32,6 +37,12 @@ class NavigationController: UINavigationController {
         navigationController.rootViewController = rootViewController
         navigationController.willDismissCallback = willDismissCallback
         return navigationController
+    }
+
+    private func setupNavigationBarAppearence() {
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.barTintColor = .clear
+        navigationBar.shadowImage = UIImage()
     }
 }
 
