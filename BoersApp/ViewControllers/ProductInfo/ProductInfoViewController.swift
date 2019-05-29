@@ -38,7 +38,7 @@ class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         getProductInfo(jobNum: jobNumer)
     }
-    
+
     //    TODO: - Resolve dismissing problem
     //    func panModalWillDismiss() {
     //        ScannerViewController.startRunning()
@@ -78,7 +78,7 @@ extension ProductInfoViewController: UITableViewDataSource {
 }
 
 extension ProductInfoViewController: PanModalPresentable {
-    
+
     var panScrollable: UIScrollView? {
         return nil
     }

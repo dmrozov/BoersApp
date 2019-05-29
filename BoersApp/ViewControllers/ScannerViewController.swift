@@ -87,7 +87,8 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             if let stringURL = object.stringValue {
                 if let number = ScannerDataProcessor.extractID(from: stringURL) {
                     ScannerViewController.stopRunning()
-                    if let productInfoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductInfoVC") as? ProductInfoViewController {
+                    if let productInfoVC = UIStoryboard(name: "Main", bundle: nil)
+                        .instantiateViewController(withIdentifier: "ProductInfoVC") as? ProductInfoViewController {
                         let navigationController = NavigationController()
                         navigationController.rootVC = productInfoVC
                         productInfoVC.jobNumer = number
