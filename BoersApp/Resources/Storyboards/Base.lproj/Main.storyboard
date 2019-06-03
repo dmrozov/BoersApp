@@ -58,6 +58,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-ES-Dx2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ra-62-aHp">
                                 <rect key="frame" x="48.5" y="615" width="278" height="36"/>
@@ -70,6 +71,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="AuK-3D-nWz"/>
                                     <constraint firstItem="GKx-NH-I0E" firstAttribute="leading" secondItem="6ra-62-aHp" secondAttribute="leading" constant="16" id="CZx-DT-m79"/>
@@ -83,6 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6ra-62-aHp" firstAttribute="centerX" secondItem="0hz-Zp-Qw4" secondAttribute="centerX" id="1bT-am-szw"/>
                             <constraint firstItem="TLj-rA-iRh" firstAttribute="bottom" secondItem="6ra-62-aHp" secondAttribute="bottom" constant="16" id="7vr-d4-6RC"/>
@@ -92,12 +95,20 @@
                             <constraint firstItem="Vkf-ES-Dx2" firstAttribute="top" secondItem="0hz-Zp-Qw4" secondAttribute="top" id="tBB-NA-EzM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLj-rA-iRh"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0lV-w7-vDO" appends="YES" id="TDX-iw-hOX"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="videoView" destination="Vkf-ES-Dx2" id="wdJ-Vs-xra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGo-hq-Ohv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.10000000000000001" id="0lV-w7-vDO">
+                    <connections>
+                        <action selector="debugLongPressed:" destination="6w6-3O-gfX" id="MeT-kP-VFL"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="245.59999999999999" y="26.53673163418291"/>
         </scene>
@@ -129,7 +140,7 @@
                             <constraint firstItem="Wpg-mh-PoB" firstAttribute="bottom" secondItem="jIe-0f-GTT" secondAttribute="bottom" constant="44" id="ZEn-zI-ySA"/>
                             <constraint firstItem="dhU-at-6bQ" firstAttribute="leading" secondItem="cbV-wk-AkZ" secondAttribute="leading" id="gx8-ny-Pzx"/>
                             <constraint firstItem="jIe-0f-GTT" firstAttribute="centerX" secondItem="cbV-wk-AkZ" secondAttribute="centerX" id="nHt-Bh-IKe"/>
-                            <constraint firstItem="dhU-at-6bQ" firstAttribute="bottom" secondItem="Wpg-mh-PoB" secondAttribute="bottom" id="oho-Hi-ml7"/>
+                            <constraint firstItem="dhU-at-6bQ" firstAttribute="bottom" secondItem="cbV-wk-AkZ" secondAttribute="bottom" id="oho-Hi-ml7"/>
                             <constraint firstItem="Wpg-mh-PoB" firstAttribute="trailing" secondItem="dhU-at-6bQ" secondAttribute="trailing" id="x0R-Rz-1EF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wpg-mh-PoB"/>
