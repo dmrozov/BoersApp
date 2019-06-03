@@ -55,6 +55,7 @@
 		B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */; };
 		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
 		B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D1CAD225A67FF0068AC10 /* Job.swift */; };
+		B5A1A70722A572F000BD46AB /* UIStoryborad + InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1A70622A572F000BD46AB /* UIStoryborad + InitViewController.swift */; };
 		B5AD16F62244FB5300B59498 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD16F52244FB5300B59498 /* Step.swift */; };
 		B5EDF8DE225132BF0084BC63 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DD225132BF0084BC63 /* ProductInfoViewController.swift */; };
 		B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DF225134330084BC63 /* AuthViewController.swift */; };
@@ -114,6 +115,7 @@
 		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Extensions/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
 		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Extensions/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		B58D1CAD225A67FF0068AC10 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		B5A1A70622A572F000BD46AB /* UIStoryborad + InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryborad + InitViewController.swift"; sourceTree = "<group>"; };
 		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B5C05111228B087000D362B9 /* ScannerDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerDataProcessor.swift; sourceTree = "<group>"; };
 		B5EDF8DD225132BF0084BC63 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */,
 				B538037E225B8B59000AE4DF /* UIFont+SFProFont.swift */,
 				3264BB2122665F26009363AA /* URL+Parameters.swift */,
+				B5A1A70622A572F000BD46AB /* UIStoryborad + InitViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				3260EE98225C1532003F7A7B /* ApiClient.swift in Sources */,
 				32A5C59D229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift in Sources */,
 				32B44FCB226C7135007B0ABB /* RequestError.swift in Sources */,
+				B5A1A70722A572F000BD46AB /* UIStoryborad + InitViewController.swift in Sources */,
 				B54548C7225907D300205779 /* ProductTableViewCell.swift in Sources */,
 				B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */,
 				B57583D6229EEC280021BB5D /* PartInfoViewController.swift in Sources */,

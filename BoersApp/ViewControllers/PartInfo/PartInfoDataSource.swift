@@ -32,11 +32,19 @@ class PartInfoDataSource {
             case .part:
                 return ProductInfoViewCellModel(title: "Part", value: part.partNumber)
             case .partDesciption:
-                return ProductInfoViewCellModel(title: part.description, value: part.drawNumber)
+                return ProductInfoViewCellModel(title: "Description", value: part.description)
             case .lRev:
-                return ProductInfoViewCellModel(title: "LRev", value: part.revShortDesc)
+                return ProductInfoViewCellModel(title: "Rev", value: part.revisionNumber)
+            case .desc:
+                return ProductInfoViewCellModel(title: "Desc", value: part.revShortDesc)
+            case .drawing:
+                return ProductInfoViewCellModel(title: "Drawing", value: part.drawNumber)
             case .type:
                 return ProductInfoViewCellModel(title: "Type", value: part.typeCode)
+            case .demand:
+                return ProductInfoViewCellModel(title: "Demand", value: part.demandQty.toString() + " " + part.dimcode)
+            case .onhand:
+                return ProductInfoViewCellModel(title: "Onhand", value: part.onhandQty.toString() + " " + part.dimcode)
             }
         }
     }
@@ -46,6 +54,6 @@ class PartInfoDataSource {
     }
     
     enum RowType: CaseIterable {
-        case part, partDesciption, lRev, type
+        case part, partDesciption, lRev, desc, drawing, type, demand, onhand
     }
 }

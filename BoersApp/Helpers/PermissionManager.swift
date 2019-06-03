@@ -25,20 +25,14 @@ import UserNotifications
  
  */
 
-// TODO: - Удалить лишние permission types
 enum PermissionsType: String {
-    case notifications, calendar, reminders, camera, photosLibrary
+    case notifications, camera
 }
 
 final class PermissionsManager {
     private enum PermissionConstants {
-        static let askPhrases = [
-            PermissionsType.calendar: "к календарю".localized,
-            .camera: "к камере".localized,
-            .notifications: "к отправке уведомлений".localized,
-            .photosLibrary: "к библиотеке фотографий".localized,
-            .reminders: "к напоминаниям".localized
-        ]
+        static let askPhrases = [PermissionsType.camera: "к камере".localized,
+                                 .notifications: "к отправке уведомлений".localized]
         static let askForAccess = "Пожалуйста, предоставьте приложению доступ".localized
         static let accessError = "Ошибка доступа".localized
         static let cancel = "Отмена".localized
@@ -74,14 +68,8 @@ final class PermissionsManager {
      */
     static func isAllowed(type: PermissionsType) -> Bool {
         switch type {
-        case .photosLibrary:
-            return PHPhotoLibrary.authorizationStatus() == .authorized
         case .camera:
             return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized
-        case .reminders:
-            return EKEventStore.authorizationStatus(for: .reminder) == .authorized
-        case .calendar:
-            return EKEventStore.authorizationStatus(for: .event) == .authorized
         case .notifications:
             return UIApplication.shared.currentUserNotificationSettings?.types.contains(.alert) ?? false
         }
@@ -92,10 +80,6 @@ final class PermissionsManager {
             return
         }
         switch forType {
-        case .calendar:
-            EKEventStore().requestAccess(to: .event) { result, _ in
-                completion(result)
-            }
         case .camera:
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { result in
                 completion(result)
@@ -105,14 +89,6 @@ final class PermissionsManager {
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
-                completion(result)
-            }
-        case .photosLibrary:
-            PHPhotoLibrary.requestAuthorization { status in
-                completion(status == .authorized)
-            }
-        case .reminders:
-            EKEventStore().requestAccess(to: .reminder) { result, _ in
                 completion(result)
             }
         }

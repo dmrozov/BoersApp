@@ -90,9 +90,8 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             if let stringURL = object.stringValue {
                 if let number = ScannerDataProcessor.extractID(from: stringURL) {
                     captureSession.stopRunning()
-                    // TODO: - Сделать крассивый экстеншен с энамами для сторибордов и их контроллеров
-                    if let productInfoVC = UIStoryboard(name: "Main", bundle: nil)
-                        .instantiateViewController(withIdentifier: "ProductInfoVC") as? ProductInfoViewController {
+                    if let productInfoVC = UIStoryboard
+                        .instantiateViewController(.productInfoVC) as? ProductInfoViewController {
                         let navigationController = NavigationController.with(productInfoVC) { [weak self] in
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                                 self?.captureSession.startRunning()
