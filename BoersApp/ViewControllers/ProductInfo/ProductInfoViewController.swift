@@ -54,6 +54,7 @@ class ProductInfoViewController: PanModalPresentbleViewController {
             if let jobs = jobs {
                 if jobs.isEmpty {
                     self.showMessageAlert(title: "Error", message: "No jobs found", buttonTitle: "OK")
+                    return
                 }
                 self.dataSouce.job = jobs.first!
                 self.tableView.reloadData()
