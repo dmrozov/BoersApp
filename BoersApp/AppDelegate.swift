@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        appearanceSetup()
         return true
+    }
+
+    private func appearanceSetup() {
+        UINavigationBar.appearance().tintColor = .black
     }
 }

@@ -78,6 +78,12 @@ final class ScannerViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func debugLongPressed(_ sender: UILongPressGestureRecognizer) {
+        #if DEBUG
+        tryToShowProductInfo(with: "401035344")
+        #endif
+    }
 }
 
 // MARK: - AVCaptureMetadataOutputObjectsDelegate
@@ -88,23 +94,25 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                         didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if let object = metadataObjects.first as? AVMetadataMachineReadableCodeObject, object.type == .qr {
             if let stringURL = object.stringValue {
+                
                 if let number = ScannerDataProcessor.extractID(from: stringURL) {
-                    captureSession.stopRunning()
-                    // TODO: - Сделать крассивый экстеншен с энамами для сторибордов и их контроллеров
-                    if let productInfoVC = UIStoryboard(name: "Main", bundle: nil)
-                        .instantiateViewController(withIdentifier: "ProductInfoVC") as? ProductInfoViewController {
-                        let navigationController = NavigationController.with(productInfoVC) { [weak self] in
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                                self?.captureSession.startRunning()
-                            })
-                        }
-                        productInfoVC.jobNumer = number
-                        presentPanModal(navigationController)
-                    }
+                    tryToShowProductInfo(with: number)
                 } else {
                     showMessageAlert(title: "Error", message: "Wrong QR code", buttonTitle: "OK")
                 }
             }
         }
+    }
+
+    private func tryToShowProductInfo(with number: String) {
+        guard let productInfoVC =
+            UIStoryboard.instantiateViewController(.productInfoVC) as? ProductInfoViewController else { return }
+        let navigationController = NavigationController.with(productInfoVC) { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self?.captureSession.startRunning()
+            })
+        }
+        productInfoVC.jobNumber = number
+        presentPanModal(navigationController)
     }
 }

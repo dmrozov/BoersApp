@@ -12,7 +12,6 @@
 		32686B43228D8745001CEAF6 /* ScannerDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC44228D85C5004F9134 /* ScannerDataProcessor.swift */; };
 		32A5C598229362DE00D3FDBD /* ProductInfoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5C597229362DE00D3FDBD /* ProductInfoDataSource.swift */; };
 		32A5C59D229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5C59C229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift */; };
-		32A5C59F229ED8A800D3FDBD /* PartInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5C59E229ED8A800D3FDBD /* PartInfoViewController.swift */; };
 		32B44FC8226C708E007B0ABB /* ParameterConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B44FC7226C708E007B0ABB /* ParameterConvertible.swift */; };
 		32B44FCB226C7135007B0ABB /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B44FCA226C7135007B0ABB /* RequestError.swift */; };
 		32B44FCD226D0C85007B0ABB /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B44FCC226D0C85007B0ABB /* ApiRequests.swift */; };
@@ -49,10 +48,14 @@
 		B54548C12259045400205779 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C02259045400205779 /* CellViewModel.swift */; };
 		B54548C7225907D300205779 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54548C5225907D300205779 /* ProductTableViewCell.swift */; };
 		B54548C8225907D300205779 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54548C6225907D300205779 /* ProductTableViewCell.xib */; };
+		B57583D6229EEC280021BB5D /* PartInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57583D5229EEC280021BB5D /* PartInfoViewController.swift */; };
+		B57583D8229EEC4F0021BB5D /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57583D7229EEC4F0021BB5D /* Part.swift */; };
+		B57583DB229EF0980021BB5D /* PartInfoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57583DA229EF0980021BB5D /* PartInfoDataSource.swift */; };
 		B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAB2259174F00E21FA4 /* PermissionManager.swift */; };
 		B587DEAF2259174F00E21FA4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */; };
 		B587DEB02259174F00E21FA4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587DEAD2259174F00E21FA4 /* String+Localized.swift */; };
 		B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D1CAD225A67FF0068AC10 /* Job.swift */; };
+		B5A1A70722A572F000BD46AB /* UIStoryborad + InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1A70622A572F000BD46AB /* UIStoryborad + InitViewController.swift */; };
 		B5AD16F62244FB5300B59498 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AD16F52244FB5300B59498 /* Step.swift */; };
 		B5EDF8DE225132BF0084BC63 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DD225132BF0084BC63 /* ProductInfoViewController.swift */; };
 		B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDF8DF225134330084BC63 /* AuthViewController.swift */; };
@@ -65,7 +68,6 @@
 		3264BB2122665F26009363AA /* URL+Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
 		32A5C597229362DE00D3FDBD /* ProductInfoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDataSource.swift; sourceTree = "<group>"; };
 		32A5C59C229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalPresentbleViewController.swift; sourceTree = "<group>"; };
-		32A5C59E229ED8A800D3FDBD /* PartInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PartInfoViewController.swift; path = ../PartInfoViewController.swift; sourceTree = "<group>"; };
 		32B44FC7226C708E007B0ABB /* ParameterConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterConvertible.swift; sourceTree = "<group>"; };
 		32B44FCA226C7135007B0ABB /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		32B44FCC226D0C85007B0ABB /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
@@ -106,10 +108,14 @@
 		B54548C5225907D300205779 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		B54548C6225907D300205779 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		B54DED03762260821AA8E982 /* Pods_BoersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B57583D5229EEC280021BB5D /* PartInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartInfoViewController.swift; sourceTree = "<group>"; };
+		B57583D7229EEC4F0021BB5D /* Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
+		B57583DA229EF0980021BB5D /* PartInfoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartInfoDataSource.swift; sourceTree = "<group>"; };
 		B587DEAB2259174F00E21FA4 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = BoersApp/Helpers/PermissionManager.swift; sourceTree = SOURCE_ROOT; };
 		B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "BoersApp/Extensions/UIViewController+Alert.swift"; sourceTree = SOURCE_ROOT; };
 		B587DEAD2259174F00E21FA4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "BoersApp/Extensions/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		B58D1CAD225A67FF0068AC10 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		B5A1A70622A572F000BD46AB /* UIStoryborad + InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryborad + InitViewController.swift"; sourceTree = "<group>"; };
 		B5AD16F52244FB5300B59498 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B5C05111228B087000D362B9 /* ScannerDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerDataProcessor.swift; sourceTree = "<group>"; };
 		B5EDF8DD225132BF0084BC63 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
@@ -157,14 +163,6 @@
 			path = ProductInfo;
 			sourceTree = "<group>";
 		};
-		32A5C5A0229EDA1200D3FDBD /* PartInfo */ = {
-			isa = PBXGroup;
-			children = (
-				32A5C59E229ED8A800D3FDBD /* PartInfoViewController.swift */,
-			);
-			path = PartInfo;
-			sourceTree = "<group>";
-		};
 		32B44FC9226C7106007B0ABB /* Networking stuff */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +189,7 @@
 				32E9163B223CE3DA00C22561 /* Product.swift */,
 				B5AD16F52244FB5300B59498 /* Step.swift */,
 				B58D1CAD225A67FF0068AC10 /* Job.swift */,
+				B57583D7229EEC4F0021BB5D /* Part.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				32A5C596229362CE00D3FDBD /* ProductInfo */,
-				32A5C5A0229EDA1200D3FDBD /* PartInfo */,
+				B57583D9229EF07C0021BB5D /* PartInfo */,
 				B5EDF8DF225134330084BC63 /* AuthViewController.swift */,
 				32EFC039220C72C8003F175B /* ScannerViewController.swift */,
 				B51F7CFC229AAB3100B47409 /* NavigationController.swift */,
@@ -248,6 +247,7 @@
 				B587DEAC2259174F00E21FA4 /* UIViewController+Alert.swift */,
 				B538037E225B8B59000AE4DF /* UIFont+SFProFont.swift */,
 				3264BB2122665F26009363AA /* URL+Parameters.swift */,
+				B5A1A70622A572F000BD46AB /* UIStoryborad + InitViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +331,15 @@
 				B5278D60225A652900CDA7E4 /* Product */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B57583D9229EF07C0021BB5D /* PartInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B57583D5229EEC280021BB5D /* PartInfoViewController.swift */,
+				B57583DA229EF0980021BB5D /* PartInfoDataSource.swift */,
+			);
+			path = PartInfo;
 			sourceTree = "<group>";
 		};
 		E4579A778D3CF04DEC12539E /* Frameworks */ = {
@@ -489,7 +498,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -506,7 +515,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoersApp/Pods-BoersApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -533,14 +542,17 @@
 				B5EDF8E0225134330084BC63 /* AuthViewController.swift in Sources */,
 				32A5C598229362DE00D3FDBD /* ProductInfoDataSource.swift in Sources */,
 				32EFC038220C72C8003F175B /* AppDelegate.swift in Sources */,
+				B57583DB229EF0980021BB5D /* PartInfoDataSource.swift in Sources */,
 				B587DEAE2259174F00E21FA4 /* PermissionManager.swift in Sources */,
 				3260EE98225C1532003F7A7B /* ApiClient.swift in Sources */,
 				32A5C59D229ED4BF00D3FDBD /* PanModalPresentbleViewController.swift in Sources */,
 				32B44FCB226C7135007B0ABB /* RequestError.swift in Sources */,
+				B5A1A70722A572F000BD46AB /* UIStoryborad + InitViewController.swift in Sources */,
 				B54548C7225907D300205779 /* ProductTableViewCell.swift in Sources */,
 				B58D1CAE225A67FF0068AC10 /* Job.swift in Sources */,
-				32A5C59F229ED8A800D3FDBD /* PartInfoViewController.swift in Sources */,
+				B57583D6229EEC280021BB5D /* PartInfoViewController.swift in Sources */,
 				32E9163C223CE3DA00C22561 /* Product.swift in Sources */,
+				B57583D8229EEC4F0021BB5D /* Part.swift in Sources */,
 				B5278D5E225A63C100CDA7E4 /* ProductTableViewCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,7 +709,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.SPBSTU.BoersApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -719,7 +730,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.SPBSTU.BoersApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

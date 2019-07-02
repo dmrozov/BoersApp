@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import Photos
 import AVKit
-import EventKit
-import UserNotifications
 
 /**
  Allows to check and request different permissions
@@ -25,24 +22,17 @@ import UserNotifications
  
  */
 
-// TODO: - Удалить лишние permission types
 enum PermissionsType: String {
-    case notifications, calendar, reminders, camera, photosLibrary
+    case camera
 }
 
 final class PermissionsManager {
     private enum PermissionConstants {
-        static let askPhrases = [
-            PermissionsType.calendar: "к календарю".localized,
-            .camera: "к камере".localized,
-            .notifications: "к отправке уведомлений".localized,
-            .photosLibrary: "к библиотеке фотографий".localized,
-            .reminders: "к напоминаниям".localized
-        ]
-        static let askForAccess = "Пожалуйста, предоставьте приложению доступ".localized
-        static let accessError = "Ошибка доступа".localized
-        static let cancel = "Отмена".localized
-        static let settings = "Настройки".localized
+        static let askPhrases = [PermissionsType.camera: "camera".localized]
+        static let askForAccess = "Please, provide app access to ".localized
+        static let accessError = "Access error".localized
+        static let cancel = "Cancel".localized
+        static let settings = "Settings".localized
     }
     /// Helps to perform any action only if required permission is granted.
     /// Displays an alert with invitation to the Settings app if first request was rejected by the user
@@ -74,16 +64,8 @@ final class PermissionsManager {
      */
     static func isAllowed(type: PermissionsType) -> Bool {
         switch type {
-        case .photosLibrary:
-            return PHPhotoLibrary.authorizationStatus() == .authorized
         case .camera:
             return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized
-        case .reminders:
-            return EKEventStore.authorizationStatus(for: .reminder) == .authorized
-        case .calendar:
-            return EKEventStore.authorizationStatus(for: .event) == .authorized
-        case .notifications:
-            return UIApplication.shared.currentUserNotificationSettings?.types.contains(.alert) ?? false
         }
     }
     private static func requestAccess(forType: PermissionsType, completion: @escaping (Bool) -> Void) {
@@ -92,27 +74,8 @@ final class PermissionsManager {
             return
         }
         switch forType {
-        case .calendar:
-            EKEventStore().requestAccess(to: .event) { result, _ in
-                completion(result)
-            }
         case .camera:
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { result in
-                completion(result)
-            }
-        case .notifications:
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { result, _ in
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-                completion(result)
-            }
-        case .photosLibrary:
-            PHPhotoLibrary.requestAuthorization { status in
-                completion(status == .authorized)
-            }
-        case .reminders:
-            EKEventStore().requestAccess(to: .reminder) { result, _ in
                 completion(result)
             }
         }
@@ -134,9 +97,7 @@ final class PermissionsManager {
      */
     static func openSettings() {
         guard let url = URL(string: UIApplication.openSettingsURLString),
-            UIApplication.shared.canOpenURL(url) else {
-                return
-        }
+            UIApplication.shared.canOpenURL(url) else { return }
         UIApplication.shared.open(url)
     }
 }
